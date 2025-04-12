@@ -1,0 +1,52 @@
+
+body {
+    background-color: #f8f9fa;
+  }
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .left-column {
+    min-height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #dee2e6;
+    padding: 2rem;
+  }
+  .contact-info {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+  }
+  .project-menu {
+    margin-top: 2rem;
+  }
+  .project-menu a {
+    display: block;
+    margin: 0.5rem 0;
+    text-decoration: none;
+    color: #007bff;
+  }
+  .project-menu a:hover {
+    text-decoration: underline;
+  }
+  .content-area {
+    padding: 2rem;
+  }
+  .standard-img {
+    width: 40%;
+    display: block;
+    margin: 10px auto;
+  }
+
+
+  @media (max-width: 768px) {
+    .standard-img {
+      width: 60%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .standard-img {
+      width: 90%;
+    }
