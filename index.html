@@ -30,7 +30,7 @@
         <div class="project-menu">
           <h5>Proyectos</h5>
           <a href="#" onclick="loadContent('planetary_sciences/index.html', 'Planetary Sciences')">Planetary Sciences</a>
-          <div class="subitem">
+          <div id="planetary-submenu" class="hidden">
                 <a href="#" onclick="loadContent('planetary_sciences/mars/index.html', 'Mars Works')">↳ Mars Works</a>
           </div>
           <a href="#" onclick="loadContent('technology/index.html', 'Technology')">Technology</a>
@@ -62,5 +62,11 @@
         });
     }
   </script>
+<script>
+function toggleSubmenu() {
+    const submenu = document.getElementById('planetary-submenu');
+    submenu.classList.toggle('hidden');
+}
+</script>
 </body>
 </html>
