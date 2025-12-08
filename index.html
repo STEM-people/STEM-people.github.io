@@ -2,72 +2,52 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mi Página Personal</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <title>STEM People</title>
   <style>
-    .hidden {
-      display: none;
-    }
-
-    #planetary-submenu {
-      margin-left: 20px;
-    }
+    .hidden { display: none; }
+    #planetary-submenu { margin-left: 20px; }
   </style>
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row">
-      <!-- Columna izquierda -->
-      <div class="col-md-3 left-column d-flex flex-column align-items-center text-center">
-        <img src="img/STEMmery.jpg".jpg" alt="Mi foto" class="profile-img">
-        <div class="contact-info mt-3">
-          <p><strong>Nombre:</strong> Mery Ruiz</p>
-          <p><strong>Email:</strong> mariaruizcontact@gmail.com</p>
-          
-        </div>
-        <div class="project-menu">
-          <h5>Proyectos</h5>
-          <a href="#" onclick="toggleSubmenu(); loadContent('planetary_sciences/index.html', 'Planetary Sciences')">Planetary Sciences</a>
-          <div id="planetary-submenu" class="hidden">
-                <a href="#" onclick="loadContent('planetary_sciences/mars/index.html', 'Mars Works')">↳ Mars Works</a>
-          </div>
-          <a href="#" onclick="loadContent('technology/index.html', 'Technology')">Technology</a>
-          <a href="#" onclick="loadContent('proyecto3.html', '')">Proyecto 3</a>
-        </div>
-      </div>
 
-      <!-- Columna derecha -->
-      <div class="col-md-9 content-area">
-        <h2 id="content-title">Bienvenido</h2>
-        <div id="main-content">
-          <p>Selecciona un proyecto desde el menú de la izquierda para ver más detalles.</p>
-        </div>
-      </div>
+  <div class="project-menu">
+    <h5>Proyectos</h5>
+
+    <a href="#" onclick="toggleSubmenu(); loadContent('planetary_sciences/index.html', 'Planetary Sciences')">
+      Planetary Sciences
+    </a>
+    <div id="planetary-submenu" class="hidden">
+      <a href="#" onclick="loadContent('planetary_sciences/mars/index.html', 'Mars Works')">↳ Mars Works</a>
     </div>
+
+    <a href="#" onclick="loadContent('technology/index.html', 'Technology')">Technology</a>
+    <a href="#" onclick="loadContent('proyecto3.html', '')">Proyecto 3</a>
+  </div>
+
+  <div id="content">
+    <!-- Aquí se cargará el contenido con loadContent -->
   </div>
 
   <script>
-    function loadContent(page, title) {
-      fetch(page)
+    function toggleSubmenu() {
+      const submenu = document.getElementById('planetary-submenu');
+      submenu.classList.toggle('hidden');
+    }
+
+    function loadContent(url, title) {
+      fetch(url)
         .then(response => response.text())
-        .then(data => {
-          document.getElementById('main-content').innerHTML = data;
-          document.getElementById('content-title').innerText = title;
+        .then(html => {
+          document.getElementById('content').innerHTML = html;
         })
-        .catch(error => {
-          document.getElementById('main-content').innerHTML = '<p>Error cargando el contenido.</p>';
-          console.error('Error:', error);
+        .catch(err => {
+          console.error('Error cargando:', err);
         });
     }
 
-</html>
+    // Cargar por defecto Planetary Sciences
+    loadContent('planetary_sciences/index.html', 'Planetary Sciences');
   </script>
-<script>
-function toggleSubmenu() {
-    const submenu = document.getElementById('planetary-submenu');
-    submenu.classList.toggle('hidden');
-}
+
 </body>
-</script>
+</html>
