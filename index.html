@@ -2,7 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STEM People</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
     .hidden { display: none; }
     #planetary-submenu { margin-left: 20px; }
@@ -10,22 +13,43 @@
 </head>
 <body>
 
-  <div class="project-menu">
-    <h5>Proyectos</h5>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Columna izquierda: Perfil y menú -->
+      <div class="col-md-3 left-column">
+        <div class="text-center">
+          <img src="img/STEMmery.jpg" alt="Profile Picture" class="profile-img mb-3">
+          <h4>Mery</h4>
+          <p class="text-muted">STEM Researcher</p>
+        </div>
 
-    <a href="#" onclick="toggleSubmenu(); loadContent('planetary_sciences/index.html', 'Planetary Sciences')">
-      Planetary Sciences
-    </a>
-    <div id="planetary-submenu" class="hidden">
-      <a href="#" onclick="loadContent('planetary_sciences/mars/index.html', 'Mars Works')">↳ Mars Works</a>
+        <div class="contact-info">
+          <p><strong>Email:</strong> tu@email.com</p>
+          <p><strong>Location:</strong> Ciudad, País</p>
+        </div>
+
+        <div class="project-menu">
+          <h5>Proyectos</h5>
+
+          <a href="#" onclick="toggleSubmenu(); loadContent('planetary_sciences/index.html', 'Planetary Sciences')">
+            Planetary Sciences
+          </a>
+          <div id="planetary-submenu" class="hidden">
+            <a href="#" onclick="loadContent('planetary_sciences/mars/index.html', 'Mars Works')">↳ Mars Works</a>
+          </div>
+
+          <a href="#" onclick="loadContent('technology/index.html', 'Technology')">Technology</a>
+          <a href="#" onclick="loadContent('proyecto3.html', '')">Proyecto 3</a>
+        </div>
+      </div>
+
+      <!-- Columna derecha: Contenido -->
+      <div class="col-md-9 content-area">
+        <div id="content">
+          <!-- Aquí se cargará el contenido con loadContent -->
+        </div>
+      </div>
     </div>
-
-    <a href="#" onclick="loadContent('technology/index.html', 'Technology')">Technology</a>
-    <a href="#" onclick="loadContent('proyecto3.html', '')">Proyecto 3</a>
-  </div>
-
-  <div id="content">
-    <!-- Aquí se cargará el contenido con loadContent -->
   </div>
 
   <script>
