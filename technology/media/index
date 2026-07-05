@@ -9,7 +9,7 @@
   <p>Here are some examples of the services on repairs I offer. Recycle your device.</p>
   <div class="container text-center">
       <img src="./movil_1.jpg" alt="Mi foto 1" class="standard-img">
-      <img src="movil_2.jpg" alt="Mi foto 2" class="standard-img">
+      <img src="./movil_2.jpg" alt="Mi foto 2" class="standard-img">
   </div>
 </body>
 </html>
