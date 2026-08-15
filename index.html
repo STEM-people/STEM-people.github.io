@@ -64,9 +64,9 @@
   </div>
 
   <script>
-    function toggleSubmenu() {
-      const submenu = document.getElementById('planetary-submenu');
-      submenu.classList.toggle('hidden');
+    function toggleSubmenu(submenuId) {
+      const submenu = document.getElementById(submenuId);
+        submenu.classList.toggle('hidden');
     }
 
     function loadContent(url, title) {
