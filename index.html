@@ -38,9 +38,15 @@
             <a href="#" onclick="loadContent('planetary_sciences/mars/index.html', 'Mars Works')">↳ Mars Works</a>
           </div>
 
-          <a href="#" onclick="toggleSubmenu('technology-submenu')">
-            Technology
-          </a>
+          <a href="#" onclick="toggleSubmenu('technology-submenu'); loadContent('technology/index.html', 'Technology')">
+              Technology
+            </a>
+
+          <div id="technology-submenu" class="hidden">
+            <a href="#" onclick="loadContent('technology/media/index.html', 'Androids')">
+              ↳ Androids
+            </a>
+          </div>
 
            <div id="technology-submenu" class="hidden">
            <a href="#" onclick="loadContent('technology/media/index.html', 'Androids')">
