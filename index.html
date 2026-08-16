@@ -53,10 +53,15 @@
             ↳ Androids
            </a>
            </div>
-          <a href="#" onclick="loadContent('astronomy/index.html', 'Astronomy')">
-           Astronomy
+          <a href="#" onclick="toggleSubmenu('astronomy-submenu'); loadContent('astronomy/index.html', 'Astronomy')">
+              Astronomy
+           </a>
+
+          <div id="astronomy-submenu" class="hidden">
+          <a href="#" onclick="loadContent('astronomy/eclipse-2026/index.html', 'Eclipse 2026')">
+            ↳ Eclipse 2026
           </a>
-          
+          </div>
         </div>
       </div>
 
