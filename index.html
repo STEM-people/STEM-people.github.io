@@ -1,102 +1,188 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STEM People</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-  .hidden {
-  display: none;
-  }
 
-  #planetary-submenu,
-  #technology-submenu,
-  #astronomy-submenu {
-    margin-left: 20px;
-  }
-    </style>
-  </head>
-  <body>
+  <title>STEM People</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    #planetary-submenu,
+    #technology-submenu,
+    #astronomy-submenu {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+
+<body>
 
   <div class="container-fluid">
+
     <div class="row">
-      <!-- Columna izquierda: Perfil y menú -->
+
+      <!-- LEFT COLUMN -->
       <div class="col-md-3 left-column">
+
         <div class="text-center">
-          <img src="img/STEMmery.jpg" alt="Profile Picture" class="profile-img mb-3">
+
+          <img src="img/STEMmery.jpg"
+               alt="Profile Picture"
+               class="profile-img mb-3">
+
           <h4>Mery</h4>
-          <p class="text-muted">STEM Researcher</p>
+
+          <p class="text-muted">
+            STEM Researcher
+          </p>
+
         </div>
 
         <div class="contact-info">
-          <p><strong>Email:</strong> tu@email.com</p>
-          <p><strong>Location:</strong> Ciudad, País</p>
+
+          <p>
+            <strong>Email:</strong>
+            tu@email.com
+          </p>
+
+          <p>
+            <strong>Location:</strong>
+            Ciudad, País
+          </p>
+
         </div>
 
         <div class="project-menu">
-          <h5>Proyectos</h5>
 
-          <a href="#" onclick="toggleSubmenu('planetary-submenu'); loadContent('planetary_sciences/index.html', 'Planetary Sciences')">
-          Planetary Sciences
+          <h5>Projects</h5>
+
+          <!-- PLANETARY SCIENCES -->
+
+          <a href="#"
+             onclick="toggleSubmenu('planetary-submenu'); loadContent('planetary_sciences/index.html'); return false;">
+            Planetary Sciences
           </a>
+
           <div id="planetary-submenu" class="hidden">
-            <a href="#" onclick="loadContent('planetary_sciences/mars/index.html', 'Mars Works')">↳ Mars Works</a>
+
+            <a href="#"
+               onclick="loadContent('planetary_sciences/mars/index.html'); return false;">
+              ↳ Mars Works
+            </a>
+
           </div>
 
-            <a href="#" onclick="toggleSubmenu('technology-submenu'); loadContent('technology/index.html', 'Technology')">
-              Technology
+
+          <!-- TECHNOLOGY -->
+
+          <a href="#"
+             onclick="toggleSubmenu('technology-submenu'); loadContent('technology/index.html'); return false;">
+            Technology
+          </a>
+
+          <div id="technology-submenu" class="hidden">
+
+            <a href="#"
+               onclick="loadContent('technology/media/index.html'); return false;">
+              ↳ Androids
             </a>
-            
-            <div id="technology-submenu" class="hidden">
-              <a href="#" onclick="loadContent('technology/media/index.html', 'Androids')">
-                ↳ Androids
-              </a>
-            </div>
-            
-            <a href="#" onclick="toggleSubmenu('astronomy-submenu'); loadContent('astronomy/index.html', 'Astronomy')">
-              Astronomy
-            </a>
-            
-            <div id="astronomy-submenu" class="hidden">
-              <a href="#" onclick="loadContent('astronomy/eclipse-2026/index.html', 'Eclipse 2026')">
-                ↳ Eclipse 2026
-              </a>
-            </div>
+
           </div>
+
+
+          <!-- ASTRONOMY -->
+
+          <a href="#"
+             onclick="toggleSubmenu('astronomy-submenu'); loadContent('astronomy/index.html'); return false;">
+            Astronomy
+          </a>
+
+          <div id="astronomy-submenu" class="hidden">
+
+            <a href="#"
+               onclick="loadContent('astronomy/eclipse-2026/index.html'); return false;">
+              ↳ Eclipse 2026
+            </a>
+
+          </div>
+
         </div>
+
       </div>
 
-      <!-- Columna derecha: Contenido -->
+
+      <!-- RIGHT COLUMN -->
+
       <div class="col-md-9 content-area">
+
         <div id="content">
-          <!-- Aquí se cargará el contenido con loadContent -->
         </div>
+
       </div>
+
     </div>
+
   </div>
 
+
   <script>
+
     function toggleSubmenu(submenuId) {
+
       const submenu = document.getElementById(submenuId);
-        submenu.classList.toggle('hidden');
+
+      submenu.classList.toggle('hidden');
+
     }
 
-    function loadContent(url, title) {
+
+    function loadContent(url) {
+
       fetch(url)
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('content').innerHTML = html;
+
+        .then(response => {
+
+          if (!response.ok) {
+            throw new Error("Could not load " + url);
+          }
+
+          return response.text();
+
         })
-        .catch(err => {
-          console.error('Error cargando:', err);
+
+        .then(html => {
+
+          document.getElementById('content').innerHTML = html;
+
+        })
+
+        .catch(error => {
+
+          console.error(error);
+
+          document.getElementById('content').innerHTML =
+            "<p>Error loading the content.</p>";
+
         });
+
     }
 
-    // Cargar por defecto Planetary Sciences
-    loadContent('planetary_sciences/index.html', 'Planetary Sciences');
+
+    // Load Planetary Sciences by default
+
+    loadContent('planetary_sciences/index.html');
+
   </script>
 
 </body>
+
 </html>
