@@ -180,6 +180,66 @@
       line-height: 1.5;
       font-style: italic;
     }
+    .skimmer-experiment {
+  max-width: 850px;
+  margin: 40px auto;
+}
+
+.skimmer-figure {
+  margin: 25px 0;
+}
+
+.skimmer-photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+  margin: 25px 0 10px;
+}
+
+.skimmer-photo {
+  margin: 0;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.skimmer-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.skimmer-caption {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.skimmer-explanation {
+  margin-top: 25px;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .skimmer-photo-pair {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .skimmer-photo {
+    height: auto;
+  }
+
+  .skimmer-photo img {
+    width: 100%;
+    height: auto;
+  }
+}
 
   </style>
 
