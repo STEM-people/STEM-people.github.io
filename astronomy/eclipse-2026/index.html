@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,14 +24,15 @@
 
     h1,
     h2,
+    h3,
     h4 {
-      line-height: 1
-    h3,.25;
+      line-height: 1.25;
     }
 
 
     /* =========================================================
        MAIN ECLIPSE PHOTOGRAPH
+       This photograph remains large
        ========================================================= */
 
     .eclipse-main-photo {
@@ -54,6 +56,7 @@
 
     /* =========================================================
        EQUIPMENT
+       Normal photographs = 83%
        ========================================================= */
 
     .equipment-section {
@@ -75,15 +78,17 @@
     }
 
     .equipment-item img {
-      width: 100%;
-      max-width: 850px;
+      width: 83%;
+      max-width: 706px;
       height: auto;
       display: block;
       margin: 0 auto;
+      cursor: zoom-in;
     }
 
     .equipment-item figcaption {
-      margin-top: 10px;
+      width: 83%;
+      margin: 10px auto 0;
       font-size: 0.95rem;
       font-style: italic;
       text-align: left;
@@ -97,6 +102,7 @@
 
     /* =========================================================
        HOMEMADE PROJECTION EXPERIMENTS
+       Normal photographs = 83%
        ========================================================= */
 
     .projection-section {
@@ -118,15 +124,17 @@
     }
 
     .experiment figure > img {
-      width: 100%;
-      max-width: 850px;
+      width: 83%;
+      max-width: 706px;
       height: auto;
       display: block;
       margin: 0 auto;
+      cursor: zoom-in;
     }
 
     .experiment figcaption {
-      margin-top: 10px;
+      width: 83%;
+      margin: 10px auto 0;
       font-size: 0.95rem;
       font-style: italic;
       text-align: left;
@@ -152,7 +160,8 @@
 
     /* =========================================================
        SKIMMER EXPERIMENT
-       Two photographs + one common caption
+       Two photographs on one horizontal line
+       Approximately 20% larger than normal photographs
        ========================================================= */
 
     .skimmer-experiment {
@@ -183,6 +192,7 @@
       width: 100%;
       height: auto;
       max-width: 100%;
+      cursor: zoom-in;
     }
 
     .skimmer-caption {
@@ -191,6 +201,53 @@
       font-size: 0.95rem;
       line-height: 1.6;
       text-align: left;
+    }
+
+
+    /* =========================================================
+       PHOTO LIGHTBOX
+       ========================================================= */
+
+    .photo-lightbox {
+      display: none;
+
+      position: fixed;
+
+      z-index: 9999;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background: rgba(0, 0, 0, 0.82);
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+      box-sizing: border-box;
+
+      cursor: zoom-out;
+    }
+
+    .photo-lightbox.active {
+      display: flex;
+    }
+
+    .photo-lightbox img {
+      width: auto;
+      height: auto;
+
+      max-width: 90vw;
+      max-height: 90vh;
+
+      transform: scale(1.5);
+
+      object-fit: contain;
+
+      cursor: zoom-out;
     }
 
 
@@ -215,9 +272,23 @@
         padding-right: 15px;
       }
 
+      .equipment-item img,
+      .experiment figure > img {
+        width: 100%;
+      }
+
+      .equipment-item figcaption,
+      .experiment figcaption {
+        width: 100%;
+      }
+
       .skimmer-photo-pair {
         grid-template-columns: 1fr;
         gap: 25px;
+      }
+
+      .skimmer-photo img {
+        width: 100%;
       }
 
     }
@@ -661,6 +732,77 @@
     <h2>Scientific Context</h2>
 
   </section>
+
+
+  <!-- =========================================================
+       PHOTO LIGHTBOX
+       ========================================================= -->
+
+  <div
+    id="photoLightbox"
+    class="photo-lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Enlarged photograph">
+
+    <img
+      id="lightboxImage"
+      src=""
+      alt="">
+
+  </div>
+
+
+  <!-- =========================================================
+       PHOTO LIGHTBOX JAVASCRIPT
+       ========================================================= -->
+
+  <script>
+
+    const lightbox = document.getElementById("photoLightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+
+    const clickablePhotos = document.querySelectorAll(
+      ".equipment-item img, .experiment figure > img, .skimmer-photo img"
+    );
+
+
+    clickablePhotos.forEach(function(photo) {
+
+      photo.addEventListener("click", function() {
+
+        lightboxImage.src = this.src;
+        lightboxImage.alt = this.alt;
+
+        lightbox.classList.add("active");
+
+      });
+
+    });
+
+
+    lightbox.addEventListener("click", function() {
+
+      lightbox.classList.remove("active");
+
+      lightboxImage.src = "";
+
+    });
+
+
+    document.addEventListener("keydown", function(event) {
+
+      if (event.key === "Escape") {
+
+        lightbox.classList.remove("active");
+
+        lightboxImage.src = "";
+
+      }
+
+    });
+
+  </script>
 
 
 </body>
