@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +11,31 @@
   <style>
 
     /* =========================================================
+       GENERAL PAGE
+       ========================================================= */
+
+    body {
+      margin: 0;
+      padding: 0 20px 60px;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h4 {
+      line-height: 1
+    h3,.25;
+    }
+
+
+    /* =========================================================
        MAIN ECLIPSE PHOTOGRAPH
-       This is the only image kept at full size.
        ========================================================= */
 
     .eclipse-main-photo {
       max-width: 850px;
-      margin: 30px auto;
+      margin: 30px auto 50px;
       text-align: center;
     }
 
@@ -36,210 +53,174 @@
 
 
     /* =========================================================
-       ALL OTHER PHOTOGRAPHS
-       Approximately 1/3 smaller than before.
+       EQUIPMENT
        ========================================================= */
 
-    .content-photo {
-      width: 66.67%;
+    .equipment-section {
+      max-width: 850px;
+      margin: 50px auto;
+    }
+
+    .equipment-intro {
+      margin-bottom: 35px;
+    }
+
+    .equipment-item {
+      margin: 35px 0;
+    }
+
+    .equipment-item figure {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .equipment-item img {
+      width: 100%;
+      max-width: 850px;
       height: auto;
       display: block;
       margin: 0 auto;
     }
 
-
-    /* =========================================================
-       THE EQUIPMENT I USED
-       ========================================================= */
-
-    .equipment-section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    .equipment-section h2 {
-      margin-bottom: 18px;
-    }
-
-    .equipment-intro {
-      max-width: 850px;
-      margin: 0 auto 40px auto;
-      line-height: 1.7;
-      font-size: 1.05rem;
-    }
-
-    .equipment-item {
-      margin: 45px auto;
-      max-width: 900px;
-    }
-
-    .equipment-item figure {
-      margin: 0;
-      text-align: center;
-    }
-
     .equipment-item figcaption {
-      margin-top: 12px;
-      padding: 0 15px;
+      margin-top: 10px;
       font-size: 0.95rem;
-      line-height: 1.5;
       font-style: italic;
+      text-align: left;
     }
 
     .equipment-science {
-      max-width: 850px;
-      margin: 45px auto 0 auto;
-      padding: 25px 30px;
-      border-left: 3px solid #555;
+      margin-top: 30px;
       line-height: 1.7;
-    }
-
-    .equipment-science strong {
-      font-weight: 600;
     }
 
 
     /* =========================================================
-       PROJECTION EXPERIMENTS
+       HOMEMADE PROJECTION EXPERIMENTS
        ========================================================= */
 
     .projection-section {
-      max-width: 1000px;
+      max-width: 850px;
       margin: 60px auto;
-      padding: 0 20px;
     }
 
     .projection-intro {
-      max-width: 850px;
-      margin: 0 auto 40px auto;
-      line-height: 1.7;
-      font-size: 1.05rem;
+      margin-bottom: 35px;
     }
 
     .experiment {
-      max-width: 900px;
-      margin: 50px auto;
+      margin: 55px 0;
     }
 
     .experiment figure {
-      margin: 0;
+      margin: 25px auto;
       text-align: center;
     }
 
+    .experiment figure > img {
+      width: 100%;
+      max-width: 850px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
     .experiment figcaption {
-      margin-top: 12px;
-      padding: 0 15px;
+      margin-top: 10px;
       font-size: 0.95rem;
-      line-height: 1.5;
       font-style: italic;
+      text-align: left;
     }
 
     .experiment-description {
-      max-width: 850px;
-      margin: 25px auto;
-      line-height: 1.7;
-    }
-
-    .science-note {
-      max-width: 850px;
-      margin: 30px auto;
-      padding: 25px 30px;
-      border-left: 3px solid #555;
       line-height: 1.7;
     }
 
 
     /* =========================================================
-       ROBOTIC TELESCOPE OBSERVATION
+       SCIENCE NOTE
        ========================================================= */
 
-    .robotic-telescope-section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    .robotic-telescope-section p {
-      max-width: 850px;
-      margin-left: auto;
-      margin-right: auto;
+    .science-note {
+      margin: 30px 0;
+      padding: 18px 20px;
+      border-left: 4px solid #555;
+      background: #f5f5f5;
       line-height: 1.7;
     }
 
-    .robotic-telescope-section figure {
-      max-width: 900px;
-      margin: 40px auto;
-      text-align: center;
-    }
 
-    .robotic-telescope-section figcaption {
-      margin-top: 12px;
-      padding: 0 15px;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      font-style: italic;
-    }
+    /* =========================================================
+       SKIMMER EXPERIMENT
+       Two photographs + one common caption
+       ========================================================= */
+
     .skimmer-experiment {
-  max-width: 850px;
-  margin: 40px auto;
-}
+      margin: 55px 0;
+    }
 
-.skimmer-figure {
-  margin: 25px 0;
-}
+    .skimmer-figure {
+      max-width: 850px;
+      margin: 30px auto;
+    }
 
-.skimmer-photo-pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  align-items: stretch;
-  margin: 25px 0 10px;
-}
+    .skimmer-photo-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+    }
 
-.skimmer-photo {
-  margin: 0;
-  height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
+    .skimmer-photo {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.skimmer-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
+    .skimmer-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
 
-.skimmer-caption {
-  margin-top: 12px;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  text-align: left;
-}
+    .skimmer-caption {
+      margin-top: 15px;
+      padding: 0 10px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      text-align: left;
+    }
 
-.skimmer-explanation {
-  margin-top: 25px;
-  line-height: 1.6;
-}
 
-@media (max-width: 700px) {
-  .skimmer-photo-pair {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
+    /* =========================================================
+       SAFETY
+       ========================================================= */
 
-  .skimmer-photo {
-    height: auto;
-  }
+    .experiment-safety {
+      margin-top: 30px;
+      line-height: 1.7;
+    }
 
-  .skimmer-photo img {
-    width: 100%;
-    height: auto;
-  }
-}
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+
+    @media (max-width: 700px) {
+
+      body {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .skimmer-photo-pair {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+    }
 
   </style>
 
@@ -248,31 +229,29 @@
 
 <body>
 
-  <h1>12 August 2026 — Total Solar Eclipse</h1>
-
 
   <!-- =========================================================
-       OBSERVATION
+       ECLIPSE
        ========================================================= -->
+
+  <h1>12 August 2026 — Total Solar Eclipse</h1>
 
   <h2>Observation</h2>
 
   <p>
-    <strong>Date:</strong> 12 August 2026
+    <strong>Date:</strong>
+    12 August 2026
   </p>
 
   <p>
     <strong>Location:</strong>
-    Herrera de Pisuerga Aerodrome, Palencia, Spain
+    Herrera de Pisuerga Aerodrome, Cantabria, Spain
   </p>
-
-
-  <!-- MAIN ECLIPSE PHOTO — FULL SIZE -->
 
   <figure class="eclipse-main-photo">
 
     <img
-      src="/astronomy/eclipse-2026/media/EclipseConVenus-2.jpg"
+      src="media/EclipseConVenus-2.jpg"
       alt="Total solar eclipse at maximum, photographed with my mobile phone, with Venus visible in the upper left">
 
     <figcaption>
@@ -284,7 +263,7 @@
 
 
   <!-- =========================================================
-       THE EQUIPMENT I USED
+       EQUIPMENT
        ========================================================= -->
 
   <section class="equipment-section">
@@ -292,12 +271,10 @@
     <h2>The Equipment I Used</h2>
 
     <p class="equipment-intro">
-      For this eclipse, I wanted not only to observe the event,
-      but also to explore some simple optical methods for observing
-      the Sun indirectly.
-      I therefore built projection systems using everyday materials
-      and experimented with small apertures to form images of the
-      solar disk.
+      For this eclipse, I wanted not only to observe the event, but also
+      to explore simple optical methods for observing the Sun indirectly.
+      I therefore built projection systems using everyday materials and
+      experimented with small apertures to form images of the solar disk.
     </p>
 
 
@@ -306,14 +283,13 @@
       <figure>
 
         <img
-          class="content-photo"
-          src="/astronomy/eclipse-2026/media/ParteMaterialUsado-boteFruteroCartulina.jpg"
+          src="media/ParteMaterialUsado-boteFruteroCartulina.jpg"
           alt="Materials prepared for the homemade solar projection experiments">
 
         <figcaption>
-          Materials prepared for the homemade solar projection experiments.
-          Cardboard, paper, a cylindrical container and a perforated kitchen
-          utensil were used to construct simple solar projection systems.
+          Materials used to construct the homemade projection systems,
+          including cardboard, a cylindrical container, a perforated
+          kitchen utensil and other everyday materials.
         </figcaption>
 
       </figure>
@@ -326,14 +302,13 @@
       <figure>
 
         <img
-          class="content-photo"
-          src="/astronomy/eclipse-2026/media/coladorAguaFruta.jpg"
+          src="media/coladorAguaFruta.jpg"
           alt="Perforated kitchen utensil used for solar projection">
 
         <figcaption>
-          A perforated kitchen utensil used as a solar projection device.
-          Its small openings can act approximately as pinholes, allowing
-          the shape of the Sun to be projected onto a nearby surface.
+          A perforated kitchen utensil used as part of the solar
+          projection experiments. Its small openings can act
+          approximately as pinholes.
         </figcaption>
 
       </figure>
@@ -341,402 +316,354 @@
     </div>
 
 
-<section class="equipment-section">
-
-  <h2>The Equipment I Used</h2>
-
-  <p class="equipment-intro">
-    For this eclipse, I wanted not only to observe the event, but also to
-    explore simple optical methods for observing the Sun indirectly.
-    I therefore built projection systems using everyday materials and
-    experimented with small apertures to form images of the solar disk.
-  </p>
-
-  <div class="equipment-item">
-
-    <figure>
-
-      <img
-        src="/astronomy/eclipse-2026/media/ParteMaterialUsado-boteFruteroCartulina.jpg"
-        alt="Materials prepared for the homemade solar projection experiments">
-
-      <figcaption>
-        Materials prepared for the homemade solar projection experiments.
-        Cardboard, paper, a cylindrical container and a perforated kitchen
-        utensil were used to construct simple solar projection systems.
-      </figcaption>
-
-    </figure>
-
-  </div>
-
-  <div class="equipment-item">
-
-    <figure>
-
-      <img
-        src="/astronomy/eclipse-2026/media/coladorAguaFruta.jpg"
-        alt="Perforated kitchen utensil used for solar projection">
-
-      <figcaption>
-        A perforated kitchen utensil used for solar projection.
-        Its small openings can act approximately as pinholes,
-        allowing the shape of the Sun to be projected onto a nearby surface.
-      </figcaption>
-
-    </figure>
-
-  </div>
-
-  <div class="equipment-science">
-
-    <p>
-      <strong>The optical principle.</strong>
-      A small opening can act as a pinhole. Light from different points
-      of the Sun travels through the opening in different directions and
-      forms an image on a surface behind it.
-    </p>
-
-    <p>
-      During a solar eclipse, the projected image can reproduce the
-      changing apparent shape of the solar disk as the Moon moves across
-      the Sun. This means that the projected pattern is not simply a
-      shadow: it is an optical image produced by the geometry of the
-      incoming sunlight.
-    </p>
-
-  </div>
-
-</section>
-
-
-<section class="projection-section">
-
-  <h2>Homemade Projection Experiments</h2>
-
-  <p class="projection-intro">
-    I wanted to explore the eclipse using simple optical experiments
-    made from everyday materials. Instead of observing the Sun directly,
-    I used small openings to project its image onto a white surface.
-  </p>
-
-
-  <!-- EXPERIMENT 1 -->
-
-  <div class="experiment">
-
-    <h3>1. A Homemade Pinhole Camera</h3>
-
-    <figure>
-
-      <img
-        src="/astronomy/eclipse-2026/media/MontajeCamaraOscura.jpg"
-        alt="Homemade pinhole camera made from a Pringles tube">
-
-      <figcaption>
-        A homemade pinhole camera made from a Pringles tube.
-        A small aperture was made in the tube, creating a simple
-        camera obscura for projecting the Sun.
-      </figcaption>
-
-    </figure>
-
-    <p class="experiment-description">
-      I used a Pringles tube to create a simple camera obscura.
-      The small aperture allowed sunlight to enter the tube and
-      form an image of the Sun on the projection surface.
-    </p>
-
-    <div class="science-note">
+    <div class="equipment-science">
 
       <p>
-        <strong>The physics:</strong>
-        Light travels approximately in straight lines. When the aperture
-        is sufficiently small, rays coming from different points of the
-        Sun can form an image on the opposite surface.
+        <strong>The optical principle.</strong>
+        A sufficiently small opening can act as a pinhole. Light from
+        different points of the Sun travels through the opening in
+        different directions and forms an image on a surface behind it.
       </p>
 
       <p>
-        The image is inverted because rays from the upper part of the
-        Sun cross the rays from the lower part as they pass through
-        the aperture.
+        During an eclipse, the projected image can reproduce the changing
+        apparent shape of the solar disk as the Moon moves across the Sun.
+        This is an optical image produced by the geometry of the light,
+        rather than simply a conventional shadow.
       </p>
 
     </div>
-
-  </div>
-
-
-  <!-- EXPERIMENT 2 -->
-
-  <div class="experiment">
-
-    <h3>2. Projecting the Sun Through a Colander</h3>
-
-    <figure>
-
-      <img
-        src="/astronomy/eclipse-2026/media/proyeccionColadorFruta.jpg"
-        alt="Solar projection through a perforated fruit colander">
-
-      <figcaption>
-        Multiple images of the Sun projected through the openings
-        of a fruit colander.
-      </figcaption>
-
-    </figure>
-
-    <p class="experiment-description">
-      I then used a fruit colander with many small openings.
-      Each opening produced its own projection of the Sun,
-      creating a pattern of multiple solar images.
-    </p>
-
-    <div class="science-note">
-
-      <p>
-        <strong>Why are there many Suns?</strong>
-        Each opening acts approximately as an independent pinhole.
-        Because the Sun is an extended light source rather than a
-        point source, each opening can form an image of the solar disk.
-      </p>
-
-      <p>
-        During an eclipse, these projected images reproduce the changing
-        shape of the partially covered solar disk.
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <!-- EXPERIMENT 3 -->
-
-  <div class="experiment">
-
-    <h3>3. Projecting the Eclipse</h3>
-
-    <figure>
-
-      <img
-        src="/astronomy/eclipse-2026/media/ProyeccionPrimerContactoCartulina.jpg"
-        alt="Partially eclipsed Sun projected onto white cardboard">
-
-      <figcaption>
-        The partially eclipsed Sun projected onto a white cardboard
-        screen during the early phase of the eclipse.
-      </figcaption>
-
-    </figure>
-
-    <p class="experiment-description">
-      I projected the Sun onto a white cardboard screen and was able
-      to follow the changing shape of the solar disk as the Moon
-      moved across it.
-    </p>
-
-    <div class="science-note">
-
-      <p>
-        <strong>An important observation:</strong>
-        the projected image is not simply the shadow of the Moon.
-        It is an image of the Sun itself, formed by the geometry
-        of the light passing through the small aperture.
-      </p>
-
-      <p>
-        As the Moon covered an increasing fraction of the solar disk,
-        the shape of the projected image changed accordingly.
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <!-- EXPERIMENT 4: SKIMMER -->
-
-  <div class="experiment skimmer-experiment">
-
-    <h3>4. Continuing the Projection Experiment: The Skimmer</h3>
-
-    <p class="experiment-description">
-      I continued the same pinhole projection experiment using a kitchen
-      skimmer. Instead of one aperture, the skimmer contains many small
-      openings, allowing multiple solar images to be formed simultaneously.
-    </p>
-
-
-    <figure class="skimmer-figure">
-
-      <div class="skimmer-photo-pair">
-
-        <div class="skimmer-photo">
-
-          <img
-            src="/astronomy/eclipse-2026/media/ProyeccionEspumaderaAmpliada-FlechaEntrandoLuna.jpg"
-            alt="Incoming sunlight reaching a kitchen skimmer during a solar projection experiment">
-
-        </div>
-
-        <div class="skimmer-photo">
-
-          <img
-            src="/astronomy/eclipse-2026/media/EspumaderaYlunaSaliendoDeEclipse-FlechaSaliente.jpg"
-            alt="Outgoing light producing multiple solar images after passing through a kitchen skimmer">
-
-        </div>
-
-      </div>
-
-
-      <figcaption class="skimmer-caption">
-
-        <strong>Projection through the skimmer.</strong>
-
-        <br><br>
-
-        <strong>Photo on the left — incoming light:</strong>
-        sunlight reaches the kitchen skimmer from the direction of
-        the Sun. The small openings act approximately as individual
-        pinholes.
-
-        <br><br>
-
-        <strong>Photo on the right — outgoing light:</strong>
-        after passing through the openings, the light continues toward
-        the projection surface. Each opening can produce its own
-        image of the partially eclipsed Sun.
-
-        <br><br>
-
-        The two photographs document the same optical process:
-        sunlight enters the apertures of the skimmer and the resulting
-        light produces multiple images of the solar disk on the
-        projection surface.
-
-      </figcaption>
-
-    </figure>
-
-
-    <div class="science-note">
-
-      <p>
-        <strong>The physical phenomenon: pinhole projection.</strong>
-        Each small opening of the skimmer acts approximately as an
-        independent pinhole. Because the Sun has a finite angular size,
-        light arriving from different points of the solar disk travels
-        in slightly different directions.
-      </p>
-
-      <p>
-        Each opening therefore forms its own image of the Sun. Since
-        the skimmer contains many openings, many solar images appear
-        simultaneously on the projection surface.
-      </p>
-
-      <p>
-        The skimmer therefore acts as an array of simple pinhole
-        projectors. The same physical principle connects this experiment
-        with the homemade camera obscura made from the Pringles tube.
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <div class="science-note">
-
-    <p>
-      <strong>What I learned from these experiments.</strong>
-    </p>
-
-    <p>
-      These experiments showed that sophisticated optical equipment is
-      not always necessary to demonstrate fundamental principles of
-      optics. With a small aperture, a projection surface and sunlight,
-      it is possible to observe the changing geometry of the solar disk
-      during an eclipse.
-    </p>
-
-  </div>
-
-</section>
-
-
-  <!-- =========================================================
-       ROBOTIC TELESCOPE OBSERVATION
-       ========================================================= -->
-
-  <section class="robotic-telescope-section">
-
-    <h2>Robotic Telescope Observation</h2>
-
-    <p>
-      During the eclipse, I also had the opportunity to observe the Sun
-      remotely through a robotic telescope operated by a friend.
-    </p>
-
-    <p>
-      Using a VPN connection, I accessed the telescope system remotely
-      and viewed its live solar image on my mobile phone. I took screenshots
-      of what I was seeing on the screen, capturing both the solar disk
-      and a visible sunspot.
-    </p>
-
-
-    <figure>
-
-      <img
-        class="content-photo"
-        src="/astronomy/eclipse-2026/media/MontajeCapturasManchaMovilTelescopioDaniel.jpg"
-        alt="Two mobile phone screenshots showing the Sun and a sunspot observed remotely through a robotic telescope">
-
-      <figcaption>
-        Remote observation of the Sun through a robotic telescope.
-        The two screenshots, taken from my mobile phone, show the solar
-        disk and a visible sunspot.
-      </figcaption>
-
-    </figure>
-
-
-    <h3>Observing a Sunspot</h3>
-
-    <p>
-      The dark feature visible on the solar disk is a
-      <strong>sunspot</strong>: a relatively cooler region of the Sun's
-      photosphere associated with a strong concentration of magnetic
-      fields. It appears darker than its surroundings because the region
-      is cooler than the surrounding photosphere, although it is still
-      extremely hot.
-    </p>
-
-    <p>
-      This observation was especially interesting because it allowed me
-      to see a real solar feature using a telescope located remotely,
-      turning my mobile phone into a window onto an astronomical
-      instrument operating at a different location.
-    </p>
 
   </section>
 
 
   <!-- =========================================================
-       FUTURE SECTIONS
+       HOMEMADE PROJECTION EXPERIMENTS
        ========================================================= -->
 
-  <h2>What I Observed</h2>
+  <section class="projection-section">
 
-  <h2>Photographic Record</h2>
+    <h2>Homemade Projection Experiments</h2>
 
-  <h2>Scientific Context</h2>
+    <p class="projection-intro">
+      I wanted to explore the eclipse using simple optical experiments
+      made from everyday materials. Instead of observing the Sun directly,
+      I used small openings to project its image onto a white surface.
+    </p>
+
+
+    <!-- =======================================================
+         EXPERIMENT 1 — PRINGLES CAMERA OBSCURA
+         ======================================================= -->
+
+    <div class="experiment">
+
+      <h3>1. A Homemade Pinhole Camera</h3>
+
+      <figure>
+
+        <img
+          src="media/MontajeCamaraOscura.jpg"
+          alt="Homemade pinhole camera made from a Pringles tube">
+
+        <figcaption>
+          A homemade pinhole camera made from a Pringles tube.
+          A small aperture was made in the tube, creating a simple
+          camera obscura for projecting the Sun.
+        </figcaption>
+
+      </figure>
+
+      <p class="experiment-description">
+        I used a Pringles tube to create a simple camera obscura.
+        A small aperture allowed sunlight to enter the tube and
+        form an image of the Sun on the projection surface.
+      </p>
+
+      <div class="science-note">
+
+        <p>
+          <strong>The physics:</strong>
+          light travels approximately in straight lines. When the
+          aperture is sufficiently small, rays coming from different
+          points of the Sun can form an image on the opposite surface.
+        </p>
+
+        <p>
+          The image is inverted because rays from the upper part of the
+          Sun reach the lower part of the projection surface, while rays
+          from the lower part reach the upper part.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =======================================================
+         EXPERIMENT 2 — FRUIT COLANDER
+         ======================================================= -->
+
+    <div class="experiment">
+
+      <h3>2. Projecting the Sun Through a Fruit Colander</h3>
+
+      <figure>
+
+        <img
+          src="media/proyeccionColadorFruta.jpg"
+          alt="Solar projection through a perforated fruit colander">
+
+        <figcaption>
+          Multiple images of the Sun projected through the openings
+          of a fruit colander.
+        </figcaption>
+
+      </figure>
+
+      <p class="experiment-description">
+        I then used a fruit colander containing many small openings.
+        Each opening produced its own projection of the Sun, creating
+        a pattern of multiple solar images.
+      </p>
+
+      <div class="science-note">
+
+        <p>
+          <strong>Why are there many Suns?</strong>
+          Each opening acts approximately as an independent pinhole.
+          Because the Sun is an extended light source rather than a
+          point source, each opening can form an image of the solar disk.
+        </p>
+
+        <p>
+          During an eclipse, these projected images can reproduce the
+          changing apparent shape of the partially covered solar disk.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =======================================================
+         EXPERIMENT 3 — FIRST CONTACT
+         ======================================================= -->
+
+    <div class="experiment">
+
+      <h3>3. Projecting the Eclipse</h3>
+
+      <figure>
+
+        <img
+          src="media/ProyeccionPrimerContactoCartulina.jpg"
+          alt="Partially eclipsed Sun projected onto white cardboard">
+
+        <figcaption>
+          The partially eclipsed Sun projected onto a white cardboard
+          screen during the early phase of the eclipse.
+        </figcaption>
+
+      </figure>
+
+      <p class="experiment-description">
+        I projected the Sun onto a white cardboard screen and was able
+        to follow the changing shape of the solar disk as the Moon
+        moved across it.
+      </p>
+
+      <div class="science-note">
+
+        <p>
+          <strong>An important observation:</strong>
+          the projected image is not simply the shadow of the Moon.
+          It is an image of the Sun formed by the geometry of the light
+          passing through the small aperture.
+        </p>
+
+        <p>
+          As the Moon covered an increasing fraction of the solar disk,
+          the shape of the projected image changed accordingly.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =======================================================
+         EXPERIMENT 4 — SKIMMER
+         ======================================================= -->
+
+    <div class="experiment skimmer-experiment">
+
+      <h3>4. Continuing the Projection Experiment: The Skimmer</h3>
+
+      <p class="experiment-description">
+        I continued the same pinhole projection experiment using a kitchen
+        skimmer. Instead of a single aperture, the skimmer contains many
+        small openings. Each opening can act approximately as an individual
+        pinhole, allowing multiple images of the Sun to be projected
+        simultaneously.
+      </p>
+
+
+      <figure class="skimmer-figure">
+
+        <div class="skimmer-photo-pair">
+
+          <div class="skimmer-photo">
+
+            <img
+              src="media/ProyeccionEspumaderaAmpliada-FlechaEntrandoLuna.jpg"
+              alt="Incoming sunlight reaching the small openings of a kitchen skimmer">
+
+          </div>
+
+
+          <div class="skimmer-photo">
+
+            <img
+              src="media/EspumaderaYlunaSaliendoDeEclipse-FlechaSaliente.jpg"
+              alt="Outgoing light producing multiple solar images after passing through a kitchen skimmer">
+
+          </div>
+
+        </div>
+
+
+        <figcaption class="skimmer-caption">
+
+          <strong>Solar projection through the skimmer.</strong>
+
+          <br><br>
+
+          <strong>Photo on the left — incoming light:</strong>
+          sunlight arrives at the kitchen skimmer from the direction of
+          the Sun. The small openings act approximately as individual
+          pinholes through which the sunlight enters.
+
+          <br><br>
+
+          <strong>Photo on the right — outgoing light:</strong>
+          after passing through the openings, the light continues toward
+          the projection surface. Each opening can produce its own image
+          of the partially eclipsed Sun.
+
+          <br><br>
+
+          The two photographs show the same optical process:
+          sunlight enters the apertures of the skimmer and the transmitted
+          light produces multiple images of the solar disk on the
+          projection surface.
+
+        </figcaption>
+
+      </figure>
+
+
+      <div class="science-note">
+
+        <p>
+          <strong>The physical phenomenon: pinhole projection.</strong>
+          Each small opening in the skimmer acts approximately as a
+          pinhole. Because the Sun has a finite angular size, light
+          arriving from different points of the solar disk travels in
+          slightly different directions.
+        </p>
+
+        <p>
+          Each opening can therefore form its own image of the Sun.
+          Since the skimmer contains many openings, many solar images
+          appear simultaneously on the projection surface.
+        </p>
+
+        <p>
+          The skimmer therefore acts as an array of simple pinhole
+          projectors. This experiment is a direct continuation of the
+          camera obscura experiment made with the Pringles tube.
+        </p>
+
+      </div>
+
+
+      <p class="experiment-safety">
+
+        <strong>Safety:</strong>
+        The projection method is indirect, but the Sun should never be
+        viewed directly through the openings of the skimmer. The observer
+        should look only at the projected image on the screen.
+
+      </p>
+
+    </div>
+
+
+    <!-- =======================================================
+         SUMMARY
+         ======================================================= -->
+
+    <div class="science-note">
+
+      <p>
+        <strong>What I learned from these experiments.</strong>
+      </p>
+
+      <p>
+        These experiments showed that sophisticated optical equipment
+        is not always necessary to demonstrate fundamental principles
+        of optics. With a small aperture, a projection surface and
+        sunlight, it is possible to observe the changing geometry of
+        the solar disk during an eclipse.
+      </p>
+
+      <p>
+        The Pringles tube and the kitchen skimmer demonstrate the same
+        underlying principle: the formation of an image through small
+        apertures. The difference is that the homemade camera uses one
+        principal aperture, whereas the skimmer provides many apertures
+        operating simultaneously.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       NEXT SECTIONS
+       ========================================================= -->
+
+  <section>
+
+    <h2>Robotic Telescope Observation</h2>
+
+  </section>
+
+
+  <section>
+
+    <h2>What I Observed</h2>
+
+  </section>
+
+
+  <section>
+
+    <h2>Photographic Record</h2>
+
+  </section>
+
+
+  <section>
+
+    <h2>Scientific Context</h2>
+
+  </section>
 
 
 </body>
 
 </html>
-```
+
