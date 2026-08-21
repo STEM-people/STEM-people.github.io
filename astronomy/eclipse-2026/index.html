@@ -234,6 +234,12 @@
        ONLY THESE TWO PHOTOS ARE CLICKABLE
        ========================================================= */
 
+    .skimmer-photo a {
+      display: block;
+      width: 100%;
+      cursor: zoom-in;
+    }
+
     .skimmer-photo img {
       width: 100%;
       height: auto;
@@ -293,20 +299,21 @@
 
     /* =========================================================
        SKIMMER-ONLY LIGHTBOX
-       
-       IMPORTANT:
-       This lightbox is used ONLY by .skimmer-photo img
+       CSS/HTML ONLY — NO JAVASCRIPT REQUIRED
        ========================================================= */
 
     .photo-lightbox {
       display: none;
 
       position: fixed;
-      z-index: 9999;
+      z-index: 99999;
 
       inset: 0;
 
-      background: rgba(0, 0, 0, 0.90);
+      width: 100%;
+      height: 100%;
+
+      background: rgba(0, 0, 0, 0.92);
 
       align-items: center;
       justify-content: center;
@@ -314,31 +321,62 @@
       padding: 20px;
 
       box-sizing: border-box;
+    }
 
+
+    /*
+       When the corresponding #skimmer-left or #skimmer-right
+       is present in the URL, the matching lightbox becomes visible.
+    */
+
+    .photo-lightbox:target {
+      display: flex !important;
+    }
+
+
+    /*
+       The dark background is clickable and returns to the
+       normal page.
+    */
+
+    .photo-lightbox .close-area {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
       cursor: zoom-out;
+      z-index: 1;
     }
 
-    .photo-lightbox.active {
-      display: flex;
-    }
 
-    .photo-lightbox-content {
-      max-width: 90vw;
-      max-height: 90vh;
+    /*
+       Image container sits above the closing background.
+    */
+
+    .photo-lightbox .lightbox-image-wrap {
+      position: relative;
+      z-index: 2;
 
       display: flex;
       align-items: center;
       justify-content: center;
+
+      width: auto;
+      height: auto;
+
+      max-width: 90vw;
+      max-height: 90vh;
     }
 
 
-    /* =========================================================
-       ENLARGED SKIMMER PHOTO
-       
-       The image is shown at approximately 150%.
-       ========================================================= */
+    /*
+       Enlarged photograph.
+       Approximately 150% of its normal displayed size.
+    */
 
     .photo-lightbox img {
+      display: block;
+
       width: auto;
       height: auto;
 
@@ -347,10 +385,10 @@
 
       object-fit: contain;
 
-      cursor: zoom-out;
-
       transform: scale(1.5);
       transform-origin: center center;
+
+      pointer-events: none;
     }
 
 
@@ -400,11 +438,15 @@
         padding: 10px;
       }
 
+      .photo-lightbox .lightbox-image-wrap {
+        max-width: 90vw;
+        max-height: 90vh;
+      }
+
       .photo-lightbox img {
         max-width: 60vw;
         max-height: 60vh;
         transform: scale(1.5);
-        transform-origin: center center;
       }
 
     }
@@ -792,9 +834,15 @@
 
           <div class="skimmer-photo">
 
-            <img
-              src="/astronomy/eclipse-2026/media/ProyeccionEspumaderaAmpliada-FlechaEntrandoLuna.jpg"
-              alt="Incoming sunlight reaching a kitchen skimmer during a solar projection experiment">
+            <a
+              href="#skimmer-left"
+              aria-label="Enlarge left skimmer photograph">
+
+              <img
+                src="/astronomy/eclipse-2026/media/ProyeccionEspumaderaAmpliada-FlechaEntrandoLuna.jpg"
+                alt="Incoming sunlight reaching a kitchen skimmer during a solar projection experiment">
+
+            </a>
 
           </div>
 
@@ -805,9 +853,15 @@
 
           <div class="skimmer-photo">
 
-            <img
-              src="/astronomy/eclipse-2026/media/EspumaderaYlunaSaliendoDeEclipse-FlechaSaliente.jpg"
-              alt="Outgoing light producing multiple solar images after passing through a kitchen skimmer">
+            <a
+              href="#skimmer-right"
+              aria-label="Enlarge right skimmer photograph">
+
+              <img
+                src="/astronomy/eclipse-2026/media/EspumaderaYlunaSaliendoDeEclipse-FlechaSaliente.jpg"
+                alt="Outgoing light producing multiple solar images after passing through a kitchen skimmer">
+
+            </a>
 
           </div>
 
@@ -1021,120 +1075,57 @@
 
 
   <!-- =========================================================
-       PHOTO LIGHTBOX
-       
-       This element is used ONLY by the two skimmer photographs.
+       SKIMMER PHOTO LIGHTBOXES
+       ONLY THESE TWO PHOTOS CAN OPEN THEM.
        ========================================================= -->
 
+
   <div
-    id="photoLightbox"
+    id="skimmer-left"
     class="photo-lightbox"
     role="dialog"
     aria-modal="true"
-    aria-label="Enlarged skimmer photograph">
+    aria-label="Enlarged left skimmer photograph">
 
-    <div class="photo-lightbox-content">
+    <a
+      href="#"
+      class="close-area"
+      aria-label="Close enlarged photograph">
+    </a>
+
+    <div class="lightbox-image-wrap">
 
       <img
-        id="lightboxImage"
-        src=""
-        alt="">
+        src="/astronomy/eclipse-2026/media/ProyeccionEspumaderaAmpliada-FlechaEntrandoLuna.jpg"
+        alt="Enlarged photograph showing incoming sunlight in the skimmer experiment">
 
     </div>
 
   </div>
 
 
-  <!-- =========================================================
-       PHOTO LIGHTBOX JAVASCRIPT
-       
-       CRITICAL:
-       ONLY ".skimmer-photo img" is selected.
+  <div
+    id="skimmer-right"
+    class="photo-lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Enlarged right skimmer photograph">
 
-       No .content-photo.
-       No .experiment figure > img.
-       No other photographs.
-       ========================================================= -->
+    <a
+      href="#"
+      class="close-area"
+      aria-label="Close enlarged photograph">
+    </a>
 
-  <script>
+    <div class="lightbox-image-wrap">
 
-    const lightbox =
-      document.getElementById("photoLightbox");
+      <img
+        src="/astronomy/eclipse-2026/media/EspumaderaYlunaSaliendoDeEclipse-FlechaSaliente.jpg"
+        alt="Enlarged photograph showing outgoing light in the skimmer experiment">
 
-    const lightboxImage =
-      document.getElementById("lightboxImage");
+    </div>
 
-
-    /*
-     * ONLY THE TWO SKIMMER PHOTOS
-     *
-     * This is the key correction.
-     */
-
-    const skimmerPhotos =
-      document.querySelectorAll(".skimmer-photo img");
-
-
-    /*
-     * Open the clicked skimmer photograph.
-     */
-
-    skimmerPhotos.forEach(function(photo) {
-
-      photo.addEventListener("click", function() {
-
-        lightboxImage.src =
-          this.currentSrc || this.src;
-
-        lightboxImage.alt =
-          this.alt;
-
-        lightbox.classList.add("active");
-
-        document.body.style.overflow = "hidden";
-
-      });
-
-    });
-
-
-    /*
-     * Close the enlarged photograph.
-     */
-
-    lightbox.addEventListener("click", function() {
-
-      lightbox.classList.remove("active");
-
-      lightboxImage.src = "";
-
-      document.body.style.overflow = "";
-
-    });
-
-
-    /*
-     * Close with Escape.
-     */
-
-    document.addEventListener("keydown", function(event) {
-
-      if (
-        event.key === "Escape" &&
-        lightbox.classList.contains("active")
-      ) {
-
-        lightbox.classList.remove("active");
-
-        lightboxImage.src = "";
-
-        document.body.style.overflow = "";
-
-      }
-
-    });
-
-  </script>
+  </div>
 
 
 </body>
