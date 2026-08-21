@@ -1,15 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>12 August 2026 — Total Solar Eclipse</title>
 
 
   <style>
+
 
     /* =========================================================
        GENERAL
@@ -199,9 +202,10 @@
        SKIMMER EXPERIMENT
 
        Normal photographs = 83%
+
        Skimmer photographs = 100%
 
-       Therefore the skimmer photographs are approximately
+       The two skimmer photographs are therefore approximately
        20% larger than the normal photographs.
        ========================================================= */
 
@@ -238,15 +242,21 @@
       display: block;
       width: 100%;
       cursor: zoom-in;
+      text-decoration: none;
     }
 
-    .skimmer-photo img {
+    .skimmer-photo a img {
       width: 100%;
       height: auto;
       max-width: 100%;
       display: block;
       cursor: zoom-in;
     }
+
+
+    /* =========================================================
+       COMMON CAPTION FOR THE TWO SKIMMER PHOTOS
+       ========================================================= */
 
     .skimmer-caption {
       margin-top: 15px;
@@ -298,20 +308,28 @@
 
 
     /* =========================================================
-       SKIMMER-ONLY LIGHTBOX
-       CSS/HTML ONLY — NO JAVASCRIPT REQUIRED
+       SKIMMER LIGHTBOX
+       
+       NO JAVASCRIPT.
+
+       The browser uses :target when the user clicks one of
+       the two skimmer photographs.
        ========================================================= */
 
-    .photo-lightbox {
+    .skimmer-lightbox {
       display: none;
 
       position: fixed;
-      z-index: 99999;
 
-      inset: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
 
       width: 100%;
       height: 100%;
+
+      z-index: 99999;
 
       background: rgba(0, 0, 0, 0.92);
 
@@ -324,57 +342,43 @@
     }
 
 
-    /*
-       When the corresponding #skimmer-left or #skimmer-right
-       is present in the URL, the matching lightbox becomes visible.
-    */
+    /* This is what actually opens the lightbox. */
 
-    .photo-lightbox:target {
-      display: flex !important;
+    .skimmer-lightbox:target {
+      display: flex;
     }
 
 
     /*
-       The dark background is clickable and returns to the
-       normal page.
+       Full-screen closing layer.
     */
 
-    .photo-lightbox .close-area {
+    .skimmer-lightbox .close-layer {
       position: absolute;
-      inset: 0;
+
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
       width: 100%;
       height: 100%;
+
       cursor: zoom-out;
+
       z-index: 1;
     }
 
 
     /*
-       Image container sits above the closing background.
+       Image sits above the closing layer.
     */
 
-    .photo-lightbox .lightbox-image-wrap {
+    .skimmer-lightbox .enlarged-image {
       position: relative;
+
       z-index: 2;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      width: auto;
-      height: auto;
-
-      max-width: 90vw;
-      max-height: 90vh;
-    }
-
-
-    /*
-       Enlarged photograph.
-       Approximately 150% of its normal displayed size.
-    */
-
-    .photo-lightbox img {
       display: block;
 
       width: auto;
@@ -386,6 +390,7 @@
       object-fit: contain;
 
       transform: scale(1.5);
+
       transform-origin: center center;
 
       pointer-events: none;
@@ -420,30 +425,34 @@
       }
 
 
-      /* The two skimmer photos stack on small screens. */
+      /*
+         The two skimmer photographs stack vertically on
+         narrow screens.
+      */
 
       .skimmer-photo-pair {
         grid-template-columns: 1fr;
         gap: 25px;
       }
 
-      .skimmer-photo img {
+      .skimmer-photo a {
+        width: 100%;
+      }
+
+      .skimmer-photo a img {
         width: 100%;
       }
 
 
-      /* Enlarged skimmer photograph on mobile. */
+      /*
+         Enlarged photograph on mobile.
+      */
 
-      .photo-lightbox {
+      .skimmer-lightbox {
         padding: 10px;
       }
 
-      .photo-lightbox .lightbox-image-wrap {
-        max-width: 90vw;
-        max-height: 90vh;
-      }
-
-      .photo-lightbox img {
+      .skimmer-lightbox .enlarged-image {
         max-width: 60vw;
         max-height: 60vh;
         transform: scale(1.5);
@@ -473,13 +482,20 @@
   <h2>Observation</h2>
 
   <p>
+
     <strong>Date:</strong>
+
     12 August 2026
+
   </p>
 
+
   <p>
+
     <strong>Location:</strong>
+
     Herrera de Pisuerga Aerodrome, Palencia, Spain
+
   </p>
 
 
@@ -494,8 +510,11 @@
       alt="Total solar eclipse at maximum, photographed with my mobile phone, with Venus visible in the upper left">
 
     <figcaption>
+
       Totality at maximum eclipse, photographed with my mobile phone.
+
       Venus is visible in the upper left.
+
     </figcaption>
 
   </figure>
@@ -508,6 +527,7 @@
   <section class="equipment-section">
 
     <h2>The Equipment I Used</h2>
+
 
     <p class="equipment-intro">
 
@@ -536,8 +556,10 @@
         <figcaption>
 
           Materials prepared for the homemade solar projection experiments.
-          Cardboard, paper, a cylindrical container and a perforated kitchen
-          utensil were used to construct simple solar projection systems.
+
+          Cardboard, paper, a cylindrical container and a perforated
+          kitchen utensil were used to construct simple solar
+          projection systems.
 
         </figcaption>
 
@@ -560,6 +582,7 @@
         <figcaption>
 
           A perforated kitchen utensil used as a solar projection device.
+
           Its small openings can act approximately as pinholes, allowing
           the shape of the Sun to be projected onto a nearby surface.
 
@@ -577,20 +600,22 @@
         <strong>The optical principle.</strong>
 
         A small opening can act as a pinhole.
+
         Light from different points of the Sun travels through the
-        opening in different directions and forms an image on a surface
-        behind it.
+        opening in different directions and forms an image on a
+        surface behind it.
 
       </p>
 
 
       <p>
 
-        During a solar eclipse, the projected image can reproduce the
-        changing apparent shape of the solar disk as the Moon moves
-        across the Sun.
+        During a solar eclipse, the projected image can reproduce
+        the changing apparent shape of the solar disk as the Moon
+        moves across the Sun.
 
         This means that the projected pattern is not simply a shadow:
+
         it is an optical image produced by the geometry of the
         incoming sunlight.
 
@@ -608,6 +633,7 @@
   <section class="projection-section">
 
     <h2>Homemade Projection Experiments</h2>
+
 
     <p class="projection-intro">
 
@@ -628,6 +654,7 @@
 
       <h3>1. A Homemade Pinhole Camera</h3>
 
+
       <figure>
 
         <img
@@ -637,6 +664,7 @@
         <figcaption>
 
           A homemade pinhole camera made from a Pringles tube.
+
           A small aperture was made in the tube, creating a simple
           camera obscura for projecting the Sun.
 
@@ -690,6 +718,7 @@
     <div class="experiment">
 
       <h3>2. Projecting the Sun Through a Colander</h3>
+
 
       <figure>
 
@@ -750,6 +779,7 @@
     <div class="experiment">
 
       <h3>3. Projecting the Eclipse</h3>
+
 
       <figure>
 
@@ -825,6 +855,7 @@
 
       <figure class="skimmer-figure">
 
+
         <div class="skimmer-photo-pair">
 
 
@@ -879,6 +910,7 @@
 
           <br><br>
 
+
           <strong>Photo on the left — incoming light:</strong>
 
           sunlight reaches the kitchen skimmer from the direction
@@ -887,7 +919,9 @@
           The small openings act approximately as individual
           pinholes through which the incoming light passes.
 
+
           <br><br>
+
 
           <strong>Photo on the right — outgoing light:</strong>
 
@@ -897,7 +931,9 @@
           Each opening can produce its own image of the partially
           eclipsed Sun.
 
+
           <br><br>
+
 
           The two photographs document the same optical process:
 
@@ -1075,55 +1111,65 @@
 
 
   <!-- =========================================================
-       SKIMMER PHOTO LIGHTBOXES
-       ONLY THESE TWO PHOTOS CAN OPEN THEM.
+       SKIMMER LEFT LIGHTBOX
+       NO JAVASCRIPT
        ========================================================= -->
-
 
   <div
     id="skimmer-left"
-    class="photo-lightbox"
+    class="skimmer-lightbox"
     role="dialog"
     aria-modal="true"
     aria-label="Enlarged left skimmer photograph">
 
+
+    <!-- Clicking the dark area closes the image -->
+
     <a
       href="#"
-      class="close-area"
+      class="close-layer"
       aria-label="Close enlarged photograph">
     </a>
 
-    <div class="lightbox-image-wrap">
 
-      <img
-        src="/astronomy/eclipse-2026/media/ProyeccionEspumaderaAmpliada-FlechaEntrandoLuna.jpg"
-        alt="Enlarged photograph showing incoming sunlight in the skimmer experiment">
+    <!-- Enlarged image -->
 
-    </div>
+    <img
+      class="enlarged-image"
+      src="/astronomy/eclipse-2026/media/ProyeccionEspumaderaAmpliada-FlechaEntrandoLuna.jpg"
+      alt="Enlarged photograph showing incoming sunlight in the skimmer experiment">
 
   </div>
 
 
+  <!-- =========================================================
+       SKIMMER RIGHT LIGHTBOX
+       NO JAVASCRIPT
+       ========================================================= -->
+
   <div
     id="skimmer-right"
-    class="photo-lightbox"
+    class="skimmer-lightbox"
     role="dialog"
     aria-modal="true"
     aria-label="Enlarged right skimmer photograph">
 
+
+    <!-- Clicking the dark area closes the image -->
+
     <a
       href="#"
-      class="close-area"
+      class="close-layer"
       aria-label="Close enlarged photograph">
     </a>
 
-    <div class="lightbox-image-wrap">
 
-      <img
-        src="/astronomy/eclipse-2026/media/EspumaderaYlunaSaliendoDeEclipse-FlechaSaliente.jpg"
-        alt="Enlarged photograph showing outgoing light in the skimmer experiment">
+    <!-- Enlarged image -->
 
-    </div>
+    <img
+      class="enlarged-image"
+      src="/astronomy/eclipse-2026/media/EspumaderaYlunaSaliendoDeEclipse-FlechaSaliente.jpg"
+      alt="Enlarged photograph showing outgoing light in the skimmer experiment">
 
   </div>
 
