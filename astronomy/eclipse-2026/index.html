@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +33,7 @@
 
     /* =========================================================
        MAIN ECLIPSE PHOTOGRAPH
-       This is the only photograph kept at full size.
+       This photograph is NOT clickable.
        ========================================================= */
 
     .eclipse-main-photo {
@@ -57,6 +58,7 @@
     /* =========================================================
        NORMAL CONTENT PHOTOGRAPHS
        83% of the size of the main photograph.
+       These photographs are NOT clickable.
        ========================================================= */
 
     .content-photo {
@@ -65,7 +67,6 @@
       height: auto;
       display: block;
       margin: 0 auto;
-      cursor: zoom-in;
     }
 
 
@@ -150,7 +151,8 @@
       text-align: center;
     }
 
-    /* All normal experiment photographs = 83% */
+    /* Normal experiment photographs = 83%.
+       They are NOT clickable. */
 
     .experiment figure > img {
       width: 83%;
@@ -158,7 +160,6 @@
       height: auto;
       display: block;
       margin: 0 auto;
-      cursor: zoom-in;
     }
 
     .experiment figcaption {
@@ -194,12 +195,12 @@
     /* =========================================================
        SKIMMER EXPERIMENT
        
-       The two skimmer photographs are approximately 20% larger
+       These two photographs are approximately 20% larger
        than the normal photographs.
-       
+
        Normal photograph = 83%
        Skimmer photograph = 100%
-       
+
        100 / 83 = approximately 1.20
        ========================================================= */
 
@@ -226,6 +227,10 @@
       align-items: center;
       justify-content: center;
     }
+
+    /*
+       ONLY these two photographs have zoom behaviour.
+    */
 
     .skimmer-photo img {
       width: 100%;
@@ -285,12 +290,13 @@
 
 
     /* =========================================================
-       PHOTO LIGHTBOX
+       SKIMMER PHOTO LIGHTBOX
        
-       Clicking a photograph opens it in a large overlay.
+       IMPORTANT:
+       This lightbox belongs ONLY to the two skimmer photos.
        ========================================================= */
 
-    .photo-lightbox {
+    .skimmer-lightbox {
       display: none;
 
       position: fixed;
@@ -298,7 +304,10 @@
 
       inset: 0;
 
-      background: rgba(0, 0, 0, 0.85);
+      width: 100%;
+      height: 100%;
+
+      background: rgba(0, 0, 0, 0.88);
 
       align-items: center;
       justify-content: center;
@@ -310,20 +319,18 @@
       cursor: zoom-out;
     }
 
-    .photo-lightbox.active {
+    .skimmer-lightbox.active {
       display: flex;
     }
 
-    .photo-lightbox-content {
-      max-width: 90vw;
-      max-height: 90vh;
+    /*
+       The enlarged photograph is approximately 50% larger
+       than its normal displayed size.
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+       max-width / max-height keep it inside the screen.
+    */
 
-    .photo-lightbox img {
+    .skimmer-lightbox img {
       width: auto;
       height: auto;
 
@@ -334,7 +341,6 @@
 
       cursor: zoom-out;
 
-      /* Approximately 50% enlargement */
       transform: scale(1.5);
     }
 
@@ -366,6 +372,10 @@
         max-width: none;
       }
 
+      /*
+         On mobile the two skimmer photographs are stacked.
+      */
+
       .skimmer-photo-pair {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -375,11 +385,16 @@
         width: 100%;
       }
 
-      .photo-lightbox {
+      /*
+         Smaller enlargement on small screens so that the
+         photograph remains visible.
+      */
+
+      .skimmer-lightbox {
         padding: 10px;
       }
 
-      .photo-lightbox img {
+      .skimmer-lightbox img {
         max-width: 85vw;
         max-height: 85vh;
         transform: scale(1.15);
@@ -446,12 +461,15 @@
     <h2>The Equipment I Used</h2>
 
     <p class="equipment-intro">
+
       For this eclipse, I wanted not only to observe the event,
       but also to explore some simple optical methods for observing
       the Sun indirectly.
+
       I therefore built projection systems using everyday materials
       and experimented with small apertures to form images of the
       solar disk.
+
     </p>
 
 
@@ -467,9 +485,11 @@
           alt="Materials prepared for the homemade solar projection experiments">
 
         <figcaption>
+
           Materials prepared for the homemade solar projection experiments.
           Cardboard, paper, a cylindrical container and a perforated kitchen
           utensil were used to construct simple solar projection systems.
+
         </figcaption>
 
       </figure>
@@ -489,9 +509,11 @@
           alt="Perforated kitchen utensil used for solar projection">
 
         <figcaption>
+
           A perforated kitchen utensil used as a solar projection device.
           Its small openings can act approximately as pinholes, allowing
           the shape of the Sun to be projected onto a nearby surface.
+
         </figcaption>
 
       </figure>
@@ -506,6 +528,7 @@
         <strong>The optical principle.</strong>
 
         A small opening can act as a pinhole.
+
         Light from different points of the Sun travels through the
         opening in different directions and forms an image on a surface
         behind it.
@@ -537,6 +560,7 @@
   <section class="projection-section">
 
     <h2>Homemade Projection Experiments</h2>
+
 
     <p class="projection-intro">
 
@@ -761,7 +785,9 @@
         <div class="skimmer-photo-pair">
 
 
-          <!-- LEFT PHOTO -->
+          <!-- =================================================
+               LEFT PHOTO — INCOMING
+               ================================================= -->
 
           <div class="skimmer-photo">
 
@@ -772,13 +798,15 @@
           </div>
 
 
-          <!-- RIGHT PHOTO -->
+          <!-- =================================================
+               RIGHT PHOTO — OUTGOING
+               ================================================= -->
 
           <div class="skimmer-photo">
 
             <img
               src="/astronomy/eclipse-2026/media/EspumaderaYlunaSaliendoDeEclipse-FlechaSaliente.jpg"
-              alt="Outgoing light producing multiple solar images after passing through a kitchen skimmer">
+              alt="Outgoing light after passing through the kitchen skimmer during a solar projection experiment">
 
           </div>
 
@@ -786,7 +814,9 @@
         </div>
 
 
-        <!-- ONE COMMON CAPTION -->
+        <!-- =================================================
+             ONE COMMON CAPTION FOR BOTH PHOTOS
+             ================================================= -->
 
         <figcaption class="skimmer-caption">
 
@@ -832,7 +862,9 @@
       </figure>
 
 
-      <!-- SCIENTIFIC EXPLANATION -->
+      <!-- =================================================
+           SCIENTIFIC EXPLANATION
+           ================================================= -->
 
       <div class="science-note">
 
@@ -883,7 +915,6 @@
 
     <div class="science-note">
 
-
       <p>
 
         <strong>What I learned from these experiments.</strong>
@@ -902,7 +933,6 @@
         disk during an eclipse.
 
       </p>
-
 
     </div>
 
@@ -941,12 +971,10 @@
 
     <figure>
 
-
       <img
         class="content-photo"
         src="/astronomy/eclipse-2026/media/MontajeCapturasManchaMovilTelescopioDaniel.jpg"
         alt="Two mobile phone screenshots showing the Sun and a sunspot observed remotely through a robotic telescope">
-
 
       <figcaption>
 
@@ -956,7 +984,6 @@
         disk and a visible sunspot.
 
       </figcaption>
-
 
     </figure>
 
@@ -1004,66 +1031,79 @@
 
 
   <!-- =========================================================
-       PHOTO LIGHTBOX
+       SKIMMER-ONLY LIGHTBOX
+       
+       IMPORTANT:
+       This is intentionally NOT a general photo viewer.
+       Only images with class "skimmer-clickable" use it.
        ========================================================= -->
 
   <div
-    id="photoLightbox"
-    class="photo-lightbox"
+    id="skimmerLightbox"
+    class="skimmer-lightbox"
     role="dialog"
     aria-modal="true"
-    aria-label="Enlarged photograph">
+    aria-hidden="true"
+    aria-label="Enlarged skimmer photograph">
 
-
-    <div class="photo-lightbox-content">
-
-      <img
-        id="lightboxImage"
-        src=""
-        alt="">
-
-    </div>
-
+    <img
+      id="skimmerLightboxImage"
+      src=""
+      alt="">
 
   </div>
 
 
   <!-- =========================================================
-       PHOTO LIGHTBOX JAVASCRIPT
+       SKIMMER-ONLY JAVASCRIPT
        ========================================================= -->
 
   <script>
 
-    const lightbox =
-      document.getElementById("photoLightbox");
+    /*
+     * Get the skimmer lightbox.
+     */
 
-    const lightboxImage =
-      document.getElementById("lightboxImage");
+    const skimmerLightbox =
+      document.getElementById("skimmerLightbox");
+
+    const skimmerLightboxImage =
+      document.getElementById("skimmerLightboxImage");
 
 
     /*
-       All photographs that should be clickable.
-    */
+     * IMPORTANT:
+     *
+     * Only the two photographs inside .skimmer-photo
+     * are selected.
+     *
+     * No other photograph on the page is selected.
+     */
 
-    const clickablePhotos =
-      document.querySelectorAll(
-        ".content-photo, .experiment figure > img, .skimmer-photo img"
-      );
+    const skimmerPhotos =
+      document.querySelectorAll(".skimmer-photo img");
 
 
     /*
-       Open photograph.
-    */
+     * Open the clicked skimmer photograph.
+     */
 
-    clickablePhotos.forEach(function(photo) {
+    skimmerPhotos.forEach(function(photo) {
 
       photo.addEventListener("click", function() {
 
-        lightboxImage.src = this.src;
+        skimmerLightboxImage.src = this.src;
 
-        lightboxImage.alt = this.alt;
+        skimmerLightboxImage.alt = this.alt;
 
-        lightbox.classList.add("active");
+        skimmerLightbox.classList.add("active");
+
+        skimmerLightbox.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+        document.body.style.overflow = "hidden";
 
       });
 
@@ -1071,30 +1111,43 @@
 
 
     /*
-       Close when clicking the dark background
-       or the photograph itself.
-    */
+     * Close when clicking anywhere on the dark overlay.
+     */
 
-    lightbox.addEventListener("click", function() {
+    skimmerLightbox.addEventListener("click", function() {
 
-      lightbox.classList.remove("active");
+      skimmerLightbox.classList.remove("active");
 
-      lightboxImage.src = "";
+      skimmerLightbox.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      skimmerLightboxImage.src = "";
+
+      document.body.style.overflow = "";
 
     });
 
 
     /*
-       Close with Escape.
-    */
+     * Close with Escape.
+     */
 
     document.addEventListener("keydown", function(event) {
 
       if (event.key === "Escape") {
 
-        lightbox.classList.remove("active");
+        skimmerLightbox.classList.remove("active");
 
-        lightboxImage.src = "";
+        skimmerLightbox.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+        skimmerLightboxImage.src = "";
+
+        document.body.style.overflow = "";
 
       }
 
@@ -1106,6 +1159,7 @@
 </body>
 
 </html>
+
 
 
 
