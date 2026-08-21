@@ -194,13 +194,12 @@
 
     /* =========================================================
        SKIMMER EXPERIMENT
-       
+
        These two photographs are approximately 20% larger
        than the normal photographs.
 
        Normal photograph = 83%
        Skimmer photograph = 100%
-
        100 / 83 = approximately 1.20
        ========================================================= */
 
@@ -291,7 +290,7 @@
 
     /* =========================================================
        SKIMMER PHOTO LIGHTBOX
-       
+
        IMPORTANT:
        This lightbox belongs ONLY to the two skimmer photos.
        ========================================================= */
@@ -324,24 +323,25 @@
     }
 
     /*
-       The enlarged photograph is approximately 50% larger
-       than its normal displayed size.
+       The photograph has a smaller base size inside the
+       lightbox and is then enlarged by 50%.
 
-       max-width / max-height keep it inside the screen.
+       This makes the 1.5x enlargement clearly visible.
     */
 
     .skimmer-lightbox img {
       width: auto;
       height: auto;
 
-      max-width: 90vw;
-      max-height: 90vh;
+      max-width: 60vw;
+      max-height: 60vh;
 
       object-fit: contain;
 
       cursor: zoom-out;
 
       transform: scale(1.5);
+      transform-origin: center center;
     }
 
 
@@ -386,8 +386,7 @@
       }
 
       /*
-         Smaller enlargement on small screens so that the
-         photograph remains visible.
+         The enlarged photograph remains at 150%.
       */
 
       .skimmer-lightbox {
@@ -395,9 +394,10 @@
       }
 
       .skimmer-lightbox img {
-        max-width: 85vw;
-        max-height: 85vh;
-        transform: scale(1.15);
+        max-width: 60vw;
+        max-height: 60vh;
+        transform: scale(1.5);
+        transform-origin: center center;
       }
 
     }
@@ -528,7 +528,6 @@
         <strong>The optical principle.</strong>
 
         A small opening can act as a pinhole.
-
         Light from different points of the Sun travels through the
         opening in different directions and forms an image on a surface
         behind it.
@@ -1032,10 +1031,10 @@
 
   <!-- =========================================================
        SKIMMER-ONLY LIGHTBOX
-       
+
        IMPORTANT:
        This is intentionally NOT a general photo viewer.
-       Only images with class "skimmer-clickable" use it.
+       Only images inside .skimmer-photo use it.
        ========================================================= -->
 
   <div
@@ -1159,6 +1158,7 @@
 </body>
 
 </html>
+
 
 
 
