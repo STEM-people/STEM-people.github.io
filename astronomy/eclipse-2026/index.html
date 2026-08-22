@@ -458,6 +458,88 @@
         transform: scale(1.5);
       }
 
+      /* =========================================================
+   SCIENTIFIC CONTEXT
+   ========================================================= */
+
+.scientific-context {
+  max-width: 900px;
+  margin: 70px auto;
+  padding: 0 20px;
+}
+
+.scientific-context h2 {
+  margin-bottom: 30px;
+}
+
+.scientific-context h3 {
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
+.scientific-context p {
+  line-height: 1.75;
+  margin: 18px 0;
+}
+
+
+/* =========================================================
+   EQUATION
+   ========================================================= */
+
+.scientific-equation {
+  text-align: center;
+  margin: 30px auto;
+  font-size: 1.35rem;
+}
+
+.equation-symbol {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+
+
+/* =========================================================
+   THREE HANDWRITTEN PHOTOGRAPHS
+   These are NOT clickable.
+   ========================================================= */
+
+.scientific-context-figure {
+  width: 83%;
+  max-width: 706px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.scientific-context-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .scientific-context {
+    padding: 0 15px;
+  }
+
+  .scientific-context-figure {
+    width: 100%;
+    max-width: none;
+  }
+
+  .scientific-equation {
+    font-size: 1.2rem;
+  }
+
+}
+
     }
 
   </style>
@@ -1099,15 +1181,114 @@
   </section>
 
 
+
+
+
   <!-- =========================================================
-       FUTURE SECTIONS
-       ========================================================= -->
+     SCIENTIFIC CONTEXT
+     ========================================================= -->
 
-  <h2>What I Observed</h2>
-
-  <h2>Photographic Record</h2>
+<section class="scientific-context">
 
   <h2>Scientific Context</h2>
+    
+    
+      <h3>
+        Why Can a Solar Eclipse Be Total? — The Geometrical Coincidence
+      </h3>
+    
+    
+      <p>
+        The possibility of a total solar eclipse is related to the
+        apparent angular size of the Sun and the Moon as seen from Earth.
+      </p>
+    
+    
+      <p>
+        For relatively small angles, the apparent angular size can be
+        approximated by:
+      </p>
+    
+    
+      <div class="scientific-equation">
+    
+        <span class="equation-symbol">
+          θ ≈ D / d
+        </span>
+    
+      </div>
+    
+    
+      <p>
+        where <strong>D</strong> is the diameter of the object and
+        <strong>d</strong> is its distance from the observer.
+      </p>
+    
+    
+      <!-- =======================================================
+           FIRST PHOTOGRAPH
+           ======================================================= -->
+    
+      <figure class="scientific-context-figure">
+    
+        <img
+          src="/astronomy/eclipse-2026/media/EclipseTotal-GeometricalCoincidence-01.jpg"
+          alt="Handwritten explanation of the geometrical coincidence that makes a total solar eclipse possible">
+    
+      </figure>
+    
+    
+      <!-- =======================================================
+           SECOND PHOTOGRAPH
+           ======================================================= -->
+    
+      <figure class="scientific-context-figure">
+    
+        <img
+          src="/astronomy/eclipse-2026/media/EclipseTotal-GeometricalCoincidence-02.jpg"
+          alt="Handwritten numerical explanation comparing the physical sizes and distances of the Sun and Moon">
+    
+      </figure>
+    
+    
+      <!-- =======================================================
+           THIRD PHOTOGRAPH
+           ======================================================= -->
+    
+      <figure class="scientific-context-figure">
+    
+        <img
+          src="/astronomy/eclipse-2026/media/EclipseTotal-GeometricalCoincidence-03.jpg"
+          alt="Handwritten geometrical explanation using similar triangles to compare the apparent sizes of the Sun and Moon">
+    
+      </figure>
+    
+    
+      <!-- =======================================================
+           THE COINCIDENCE IS NOT EXACT OR PERMANENT
+           ======================================================= -->
+    
+      <h3>
+        The coincidence is not exact or permanent
+      </h3>
+    
+    
+      <p>
+        The Moon's orbit is elliptical, so the Earth–Moon distance changes.
+        The Earth is also at different distances from the Sun during the
+        year.
+      </p>
+    
+    
+      <p>
+        Therefore, sometimes the Moon can completely cover the solar disk,
+        producing a total solar eclipse, while at other times a ring of
+        photosphere remains visible around the Moon, producing an annular
+        solar eclipse.
+      </p>
+    
+    
+    </section>
 
 
   <!-- =========================================================
@@ -1173,6 +1354,11 @@
 
   </div>
 
+    <!-- =========================================================
+       FUTURE SECTIONS
+       ========================================================= -->
+
+  <h2>What I Observed</h2>
 
 </body>
 
