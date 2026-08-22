@@ -1,12 +1,93 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Mars Works</title>
-</head>
-<body>
-  <h1>Mars Works</h1>
-  <p>Bienvenido a la sección de proyectos sobre Marte.</p>
-</body>
-</html>
 
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Mars Works</title>
+
+  <style>
+
+    .mars-section {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .mars-subsection-title {
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .mars-description {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .gale-crater-figure {
+      margin: 2rem auto;
+      text-align: center;
+    }
+
+    .gale-crater-figure img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .gale-crater-figure figcaption {
+      max-width: 800px;
+      margin: 1rem auto 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #666;
+      text-align: center;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="mars-section">
+
+    <h1>Mars Works</h1>
+
+    <h2 class="mars-subsection-title">The Gale Crater</h2>
+
+    <p class="mars-description">
+      I have been a member of the Mars Science Laboratory mission, to which the
+      Curiosity rover belongs. Using data acquired by instruments aboard this rover,
+      I conducted a research study that can be consulted
+      <a href="https://doi.org/10.3390/rs17030368" target="_blank" rel="noopener noreferrer">
+        here
+      </a>.
+    </p>
+
+    <figure class="gale-crater-figure">
+
+      <img
+        src="CuriosityVideo.jpg"
+        alt="Reconstruction of the Gale Crater environment"
+      >
+
+      <figcaption>
+        Screenshot from a video I produced following a reconstruction of the
+        Gale Crater environment based on measurements obtained by the OMEGA
+        instrument aboard the Mars Express orbiter. The reconstruction was
+        developed using MATLAB.
+      </figcaption>
+
+    </figure>
+
+  </div>
+
+</body>
+
+</html>
