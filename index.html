@@ -178,7 +178,20 @@
 
         .then(html => {
 
-          document.getElementById('content').innerHTML = html;
+          const content = document.getElementById('content');
+          content.innerHTML = html;
+          
+          const pageCredit = document.createElement('div');
+          pageCredit.className = 'page-credit';
+          pageCredit.innerHTML = `
+            <strong>Contenido protegido y sujeto a mantenimiento:</strong>
+            Los contenidos de <em>STEM-people</em> se mantienen y actualizan periódicamente.
+            En cualquier caso, cuando se utilicen contenidos, imágenes, datos o materiales
+            de esta página, se solicita mencionar <strong>STEM-people</strong> como fuente
+            e incluir la dirección web correspondiente.
+          `;
+
+          content.appendChild(pageCredit);
 
         })
 
