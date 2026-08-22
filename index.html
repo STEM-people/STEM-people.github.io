@@ -8,7 +8,6 @@
   <title>STEM People</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
 
   <style>
@@ -22,33 +21,31 @@
       margin-left: 20px;
     }
 
-  .page-credit {
-    margin: 2rem auto 0;
-    padding: 0.8rem 1rem;
-    max-width: 850px;
-    border-top: 1px solid #ddd;
-    font-size: 0.82rem;
-    line-height: 1.5;
-    text-align: center;
-    color: #666;
-  }
+    .page-credit {
+      margin: 2rem auto 0;
+      padding: 0.8rem 1rem;
+      max-width: 850px;
+      border-top: 1px solid #ddd;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      text-align: center;
+      color: #666;
+    }
 
-  .page-credit strong {
-    color: #444;
-  }
+    .page-credit strong {
+      color: #444;
+    }
 
-
-  .welcome-message {
-  max-width: 800px;
-  margin: 120px auto 0;
-  padding: 0 30px;
-  text-align: center;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  }
-    
+    .welcome-message {
+      max-width: 800px;
+      margin: 120px auto 0;
+      padding: 0 30px;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
   </style>
-  
+
 </head>
 
 <body>
@@ -81,14 +78,17 @@
             mariaruizcontact@gmail.com
           </p>
 
-
         </div>
 
         <div class="project-menu">
 
           <h5>PROJECTS</h5>
-          <a href="#" onclick="showWelcome()">Projects</a>
-          
+
+          <a href="#" onclick="showWelcome(); return false;">
+            Projects
+          </a>
+
+
           <!-- PLANETARY SCIENCES -->
 
           <a href="#"
@@ -148,19 +148,23 @@
 
       <div class="col-md-9 content-area">
 
-       <div id="content">
-        <div class="welcome-message">
-          <p>
-            In addition to my work with institutions, I also undertake freelance projects,
-            which allows me to collaborate with people from around the world.
-          </p>
-      
-          <p>
-            If you would like to collaborate with me on a scientific paper, develop a STEM
-            project, or simply discuss science, please feel free to contact me.
-          </p>
+        <div id="content">
+
+          <div class="welcome-message">
+
+            <p>
+              In addition to my work with institutions, I also undertake freelance projects,
+              which allows me to collaborate with people from around the world.
+            </p>
+
+            <p>
+              If you would like to collaborate with me on a scientific paper, develop a STEM
+              project, or simply discuss science, please feel free to contact me.
+            </p>
+
+          </div>
+
         </div>
-      </div>
 
       </div>
 
@@ -168,23 +172,29 @@
 
   </div>
 
+
   <script>
-      function showWelcome() {
+
+    function showWelcome() {
+
       document.getElementById('content').innerHTML = `
         <div class="welcome-message">
+
           <p>
             In addition to my work with institutions, I also undertake freelance projects,
             which allows me to collaborate with people from around the world.
           </p>
-    
+
           <p>
             If you would like to collaborate with me on a scientific paper, develop a STEM
             project, or simply discuss science, please feel free to contact me.
           </p>
+
         </div>
       `;
+
     }
-  <script>
+
 
     function toggleSubmenu(submenuId) {
 
@@ -212,10 +222,14 @@
         .then(html => {
 
           const content = document.getElementById('content');
+
           content.innerHTML = html;
-          
+
+
           const pageCredit = document.createElement('div');
+
           pageCredit.className = 'page-credit';
+
           pageCredit.innerHTML = `
             The content of <em>STEM-people</em> is regularly maintained and updated.
             In all cases, when content, images, data, or materials from this website
@@ -240,6 +254,6 @@
 
   </script>
 
-</body>
 
+</body>
 </html>
