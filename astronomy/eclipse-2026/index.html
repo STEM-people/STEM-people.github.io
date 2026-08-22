@@ -458,7 +458,7 @@
         transform: scale(1.5);
       }
 
-      /* =========================================================
+  /* =========================================================
    SCIENTIFIC CONTEXT
    ========================================================= */
 
@@ -542,12 +542,63 @@
 
     }
 
-  </style>
+    /* =========================================================
+   WHAT I OBSERVED
+   ========================================================= */
 
-</head>
-
-
-<body>
+    .what-i-observed {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    
+    .what-i-observed p {
+      line-height: 1.7;
+    }
+    
+    
+    /* =========================================================
+       ECLIPSE VIDEO
+       ========================================================= */
+    
+    .eclipse-video {
+      display: block;
+      width: 83%;
+      max-width: 750px;
+      height: auto;
+      margin: 30px auto 15px;
+    }
+    
+    .video-caption {
+      width: 83%;
+      max-width: 750px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+    
+    
+    @media (max-width: 700px) {
+    
+      .eclipse-video {
+        width: 100%;
+        max-width: none;
+      }
+    
+      .video-caption {
+        width: 100%;
+        max-width: none;
+      }
+    
+    }
+    
+      </style>
+    
+    </head>
+    
+    
+    <body>
 
 
   <!-- =========================================================
@@ -1360,6 +1411,64 @@
 
   <h2>What I Observed</h2>
 
+
+  ```html
+<!-- =========================================================
+     WHAT I OBSERVED
+     ========================================================= -->
+
+<section class="what-i-observed">
+
+  <h2>What I Observed</h2>
+
+
+  <p>
+    During the total solar eclipse, I observed the changing appearance
+    of the Sun as the Moon progressively covered the solar disk,
+    reaching totality at the maximum of the eclipse.
+  </p>
+
+
+  <!-- =======================================================
+       VIDEO — MOMENT OF MAXIMUM ECLIPSE
+       ======================================================= -->
+
+  <h3>
+    The Moment of Maximum Eclipse
+  </h3>
+
+
+  <p>
+    This video shows what I saw and recorded at the moment of
+    maximum eclipse.
+  </p>
+
+
+  <video
+    class="eclipse-video"
+    controls
+    playsinline
+    preload="metadata">
+
+    <source
+      src="/astronomy/eclipse-2026/media/momentOfMaximeEclipse.mp4"
+      type="video/mp4">
+
+    Your browser does not support HTML5 video.
+
+  </video>
+
+
+  <p class="video-caption">
+    Video recorded by me at the moment of maximum eclipse,
+    on 12 August 2026.
+  </p>
+
+
+</section>
+
+
+  
 </body>
 
 </html>
