@@ -87,7 +87,8 @@
         <div class="project-menu">
 
           <h5>Projects</h5>
-
+          <a href="#" onclick="showWelcome()">Projects</a>
+          
           <!-- PLANETARY SCIENCES -->
 
           <a href="#"
@@ -167,7 +168,25 @@
 
   </div>
 
+      function showWelcome() {
+      document.getElementById('content').innerHTML = `
+      <div class="welcome-message">
+        <p>
+          In addition to my work with institutions, I also undertake freelance projects,
+          which allows me to collaborate with people from around the world.
+        </p>
+  
+        <p>
+          If you would like to collaborate with me on a scientific paper, develop a STEM
+          project, or simply discuss science, please feel free to contact me.
+        </p>
+      </div>
+    `;
+    }
 
+
+
+  
   <script>
 
     function toggleSubmenu(submenuId) {
