@@ -50,3 +50,53 @@ body {
     .standard-img {
       width: 90%;
     }
+
+    
+        /* =========================================
+       PROJECT CONTENT — BLACK THEME
+       ========================================= */
+    
+    .content-area {
+        background-color: #000000;
+        color: #ffffff;
+        min-height: 100vh;
+    }
+    
+    /* Todo el texto que se carga dentro de Projects */
+    .content-area p,
+    .content-area h1,
+    .content-area h2,
+    .content-area h3,
+    .content-area h4,
+    .content-area h5,
+    .content-area h6,
+    .content-area li,
+    .content-area span,
+    .content-area strong,
+    .content-area em {
+        color: #ffffff;
+    }
+    
+    /* Enlaces */
+    .content-area a {
+        color: #ffffff;
+    }
+    
+    .content-area a:hover {
+        color: #ffffff;
+    }
+    
+    /* Texto de bienvenida */
+    .content-area .welcome-message {
+        color: #ffffff;
+    }
+    
+    /* Crédito inferior */
+    .content-area .page-credit {
+        color: #ffffff;
+        border-top-color: #ffffff;
+    }
+    
+    .content-area .page-credit strong {
+        color: #ffffff;
+    }
