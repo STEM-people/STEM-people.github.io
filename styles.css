@@ -100,3 +100,84 @@ body {
     .content-area .page-credit strong {
         color: #ffffff;
     }
+
+
+    /* =========================================
+       RIGHT CONTENT — DARK PROJECT THEME
+       ========================================= */
+    
+    .content-area {
+        background-color: #000000;
+        color: #ffffff;
+        min-height: 100vh;
+    }
+    
+    .content-area p,
+    .content-area h1,
+    .content-area h2,
+    .content-area h3,
+    .content-area h4,
+    .content-area h5,
+    .content-area h6,
+    .content-area li,
+    .content-area span,
+    .content-area strong,
+    .content-area em {
+        color: #ffffff;
+    }
+    
+    .content-area a {
+        color: #ffffff;
+    }
+    
+    .content-area a:hover {
+        color: #ffffff;
+    }
+    
+    
+    /* =========================================
+       MUSIC PLAYER
+       ========================================= */
+    
+    .contact-music {
+        margin: 70px auto 0;
+        text-align: center;
+        max-width: 500px;
+    }
+    
+    .music-title {
+        margin-bottom: 18px;
+        color: #ffffff;
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+    }
+    
+    .contact-music audio {
+        width: 100%;
+        max-width: 450px;
+    }
+    
+    .music-credit {
+        margin-top: 12px;
+        color: #ffffff;
+        font-size: 0.75rem;
+        opacity: 0.75;
+    }
+    
+    
+    /* =========================================
+       PAGE CREDIT
+       ========================================= */
+    
+    .content-area .page-credit {
+        color: #ffffff;
+        border-top-color: #ffffff;
+    }
+    
+    .content-area .page-credit strong {
+        color: #ffffff;
+    }
+
+
