@@ -184,21 +184,48 @@
 
     function showWelcome() {
 
-      document.getElementById('content').innerHTML = `
-        <div class="welcome-message">
 
-          <p>
-            In addition to my work with institutions, I also undertake freelance projects,
-            which allows me to collaborate with people from around the world.
-          </p>
+      <script>
+      
+        function showWelcome() {
+      
+          document.getElementById('content').innerHTML = `
+            <div class="welcome-message">
+      
+              <p>
+                In addition to my work with institutions, I also undertake freelance projects,
+                which allows me to collaborate with people from around the world.
+              </p>
+      
+              <p>
+                If you would like to collaborate with me on a scientific paper, develop a STEM
+                project, or simply discuss science, please feel free to contact me.
+              </p>
+      
+              <div class="contact-music">
+      
+                <div class="music-title">
+                  MUSIC FOR THE JOURNEY
+                </div>
+      
+                <audio controls preload="metadata">
+                  <source src="audio/space-ambient-cinematic-viacheslavstarostin.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+      
+                <div class="music-credit">
+                  <em>Space Ambient Cinematic Music</em> — Viacheslav Starostin
+                </div>
+      
+              </div>
+      
+            </div>
+          `;
+      
+        }
 
-          <p>
-            If you would like to collaborate with me on a scientific paper, develop a STEM
-            project, or simply discuss science, please feel free to contact me.
-          </p>
+    </script>
 
-        </div>
-      `;
 
     }
 
