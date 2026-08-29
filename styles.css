@@ -175,6 +175,45 @@ body {
         color: #ffffff;
         border-top-color: #ffffff;
     }
+
+
+    
+        /* =========================================
+           BACKGROUND MUSIC
+           ========================================= */
+        
+        #music-toggle {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+        
+            width: 42px;
+            height: 42px;
+        
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+        
+            background: #000000;
+            color: #ffffff;
+        
+            font-size: 18px;
+            cursor: pointer;
+        
+            z-index: 9999;
+        
+            transition: opacity 0.3s ease,
+                        background-color 0.3s ease;
+        }
+        
+        #music-toggle:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+        
+        #music-toggle.muted {
+            opacity: 0.45;
+        }
+
     
     .content-area .page-credit strong {
         color: #ffffff;
