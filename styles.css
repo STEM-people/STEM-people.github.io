@@ -219,4 +219,82 @@ body {
         color: #ffffff;
     }
 
-
+        
+        /* =========================================
+           RIGHT COLUMN — BLACK PROJECT AREA
+           ========================================= */
+        
+        .content-area {
+            background-color: #000000;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+        
+        
+        /* =========================================
+           WELCOME TEXT
+           ========================================= */
+        
+        .content-area .welcome-message {
+            color: #ffffff;
+        }
+        
+        .content-area .welcome-message p {
+            color: #ffffff;
+        }
+        
+        
+        /* =========================================
+           PROJECT CONTENT
+           ========================================= */
+        
+        .content-area h1,
+        .content-area h2,
+        .content-area h3,
+        .content-area h4,
+        .content-area h5,
+        .content-area h6,
+        .content-area p,
+        .content-area li,
+        .content-area span,
+        .content-area strong,
+        .content-area em {
+            color: #ffffff;
+        }
+        
+        
+        /* =========================================
+           LINKS
+           ========================================= */
+        
+        .content-area a {
+            color: #ffffff;
+        }
+        
+        .content-area a:hover {
+            color: #ffffff;
+        }
+        
+        
+        /* =========================================
+           PAGE CREDIT
+           ========================================= */
+        
+        .content-area .page-credit {
+            color: #ffffff;
+            border-top-color: #ffffff;
+        }
+        
+        .content-area .page-credit strong {
+            color: #ffffff;
+        }
+        
+        
+        /* =========================================
+           OPTIONAL — IMAGES
+           ========================================= */
+        
+        .content-area img {
+            max-width: 100%;
+            height: auto;
+        }
