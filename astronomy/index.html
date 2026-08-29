@@ -1,10 +1,97 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Astronomy</title>
+
+  <style>
+    /*
+     * =========================================================
+     * ASTRONOMY — STATIC BLACK BACKGROUND
+     * =========================================================
+     *
+     * This page intentionally has no animated background,
+     * particles, canvas or moving elements.
+     */
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000000 !important;
+      color: #ffffff !important;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    /*
+     * Keep the Astronomy content static.
+     */
+
+    body::before,
+    body::after {
+      content: none !important;
+      display: none !important;
+      animation: none !important;
+    }
+
+    /*
+     * Typography
+     */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    li,
+    span,
+    strong,
+    em {
+      color: #ffffff !important;
+      animation: none !important;
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      margin-top: 45px;
+      margin-bottom: 20px;
+    }
+
+    /*
+     * Prevent inherited animations/transforms
+     * from affecting this page.
+     */
+
+    body,
+    body * {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    /*
+     * No moving background layers.
+     */
+
+    canvas {
+      display: none !important;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -27,3 +114,4 @@
 </body>
 
 </html>
+
