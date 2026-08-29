@@ -1,16 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>STEM People</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="styles.css">
 
   <style>
+
     .hidden {
       display: none;
     }
@@ -44,24 +52,49 @@
       font-size: 1.1rem;
       line-height: 1.7;
     }
+
   </style>
 
 </head>
 
+
 <body>
+
+
+  <!-- =========================================
+       BACKGROUND MUSIC
+       ========================================= -->
+
+  <audio id="welcome-music" loop preload="auto">
+
+    <source
+      src="audio/space-ambient-cinematic-music.mp3"
+      type="audio/mpeg"
+    >
+
+    Your browser does not support the audio element.
+
+  </audio>
+
 
   <div class="container-fluid">
 
     <div class="row">
 
-      <!-- LEFT COLUMN -->
+
+      <!-- =========================================
+           LEFT COLUMN
+           ========================================= -->
+
       <div class="col-md-3 left-column">
 
         <div class="text-center">
 
-          <img src="img/STEMmery.jpg"
-               alt="Profile Picture"
-               class="profile-img mb-3">
+          <img
+            src="img/STEMmery.jpg"
+            alt="Profile Picture"
+            class="profile-img mb-3"
+          >
 
           <h4>Mery</h4>
 
@@ -71,91 +104,139 @@
 
         </div>
 
+
         <div class="contact-info">
 
           <p>
             <strong>Email:</strong>
             mariaruizcontact@gmail.com
           </p>
-          <strong>ORCID:</strong>
-          <a
-            href="https://orcid.org/0009-0009-0930-7790"
-            target="_blank"
-            rel="noopener noreferrer">
-            0009-0009-0930-7790
-          </a>
-          
+
+          <p>
+            My ORCID:
+            https://orcid.org/0009-0009-0930-7790
+          </p>
+
         </div>
+
+
+        <!-- =========================================
+             PROJECT MENU
+             ========================================= -->
 
         <div class="project-menu">
 
-      
 
-          <a href="#" onclick="showWelcome(); return false;">
+          <!-- WELCOME / PROJECTS -->
+
+          <a
+            href="#"
+            onclick="showWelcome(); return false;"
+          >
+
             <h5>PROJECTS</h5>
+
           </a>
 
 
-          <!-- PLANETARY SCIENCES -->
+          <!-- =========================================
+               PLANETARY SCIENCES
+               ========================================= -->
 
-          <a href="#"
-             onclick="toggleSubmenu('planetary-submenu'); loadContent('planetary_sciences/index.html'); return false;">
+          <a
+            href="#"
+            onclick="toggleSubmenu('planetary-submenu'); loadContent('planetary_sciences/index.html'); return false;"
+          >
             Planetary Sciences
           </a>
 
-          <div id="planetary-submenu" class="hidden">
 
-            <a href="#"
-               onclick="loadContent('planetary_sciences/mars/index.html'); return false;">
+          <div
+            id="planetary-submenu"
+            class="hidden"
+          >
+
+            <a
+              href="#"
+              onclick="loadContent('planetary_sciences/mars/index.html'); return false;"
+            >
               ↳ Mars Works
             </a>
 
           </div>
 
 
-          <!-- TECHNOLOGY -->
+          <!-- =========================================
+               TECHNOLOGY
+               ========================================= -->
 
-          <a href="#"
-             onclick="toggleSubmenu('technology-submenu'); loadContent('technology/index.html'); return false;">
+          <a
+            href="#"
+            onclick="toggleSubmenu('technology-submenu'); loadContent('technology/index.html'); return false;"
+          >
             Technology
           </a>
 
-          <div id="technology-submenu" class="hidden">
 
-            <a href="#"
-               onclick="loadContent('technology/media/index.html'); return false;">
+          <div
+            id="technology-submenu"
+            class="hidden"
+          >
+
+            <a
+              href="#"
+              onclick="loadContent('technology/media/index.html'); return false;"
+            >
               ↳ Androids
             </a>
 
           </div>
 
 
-          <!-- ASTRONOMY -->
+          <!-- =========================================
+               ASTRONOMY
+               ========================================= -->
 
-          <a href="#"
-             onclick="toggleSubmenu('astronomy-submenu'); loadContent('astronomy/index.html'); return false;">
+          <a
+            href="#"
+            onclick="toggleSubmenu('astronomy-submenu'); loadContent('astronomy/index.html'); return false;"
+          >
             Astronomy
           </a>
 
-          <div id="astronomy-submenu" class="hidden">
 
-            <a href="#"
-               onclick="loadContent('astronomy/eclipse-2026/index.html'); return false;">
+          <div
+            id="astronomy-submenu"
+            class="hidden"
+          >
+
+            <a
+              href="#"
+              onclick="loadContent('astronomy/eclipse-2026/index.html'); return false;"
+            >
               ↳ Eclipse 2026
             </a>
 
           </div>
+
 
         </div>
 
       </div>
 
 
-      <!-- RIGHT COLUMN -->
+      <!-- =========================================
+           RIGHT COLUMN
+           ========================================= -->
 
       <div class="col-md-9 content-area">
 
         <div id="content">
+
+
+          <!-- =========================================
+               WELCOME PAGE
+               ========================================= -->
 
           <div class="welcome-message">
 
@@ -171,6 +252,7 @@
 
           </div>
 
+
         </div>
 
       </div>
@@ -180,120 +262,284 @@
   </div>
 
 
+  <!-- =========================================
+       JAVASCRIPT
+       ========================================= -->
 
-      <script>
-      
-        function showWelcome() {
-      
-          document.getElementById('content').innerHTML = `
-            <div class="welcome-message">
-      
-              <p>
-                In addition to my work with institutions, I also undertake freelance projects,
-                which allows me to collaborate with people from around the world.
-              </p>
-      
-              <p>
-                If you would like to collaborate with me on a scientific paper, develop a STEM
-                project, or simply discuss science, please feel free to contact me.
-              </p>
-      
-              <div class="contact-music">
-      
-                <div class="music-title">
-                  MUSIC FOR THE JOURNEY
-                </div>
-      
-                <audio controls preload="metadata">
-                  <source src="audio/space-ambient-cinematic-viacheslavstarostin.mp3" type="audio/mpeg">
-                  Your browser does not support the audio element.
-                </audio>
-      
-                <div class="music-credit">
-                  <em>Space Ambient Cinematic Music</em> — Viacheslav Starostin
-                </div>
-      
-              </div>
-      
-            </div>
-          `;
-      
+  <script>
+
+
+    /* =========================================
+       BACKGROUND MUSIC
+       ========================================= */
+
+    const welcomeMusic =
+      document.getElementById('welcome-music');
+
+
+    /*
+     * Volume.
+     * 0.35 = 35%
+     */
+
+    welcomeMusic.volume = 0.35;
+
+
+    /*
+     * Start the music.
+     */
+
+    function startWelcomeMusic() {
+
+      welcomeMusic.currentTime = 0;
+
+      welcomeMusic.play().catch(function () {
+
+        /*
+         * Modern browsers may block
+         * autoplay with sound.
+         */
+
+        console.log(
+          "Autoplay was blocked by the browser."
+        );
+
+      });
+
+    }
+
+
+    /*
+     * Stop the music.
+     */
+
+    function stopWelcomeMusic() {
+
+      welcomeMusic.pause();
+
+      welcomeMusic.currentTime = 0;
+
+    }
+
+
+    /*
+     * Try to start the music when
+     * the page loads.
+     */
+
+    window.addEventListener('load', function () {
+
+      startWelcomeMusic();
+
+    });
+
+
+    /*
+     * If the browser blocked autoplay,
+     * the first user interaction will
+     * start the music.
+     */
+
+    document.addEventListener(
+      'click',
+      function startMusicAfterInteraction() {
+
+        /*
+         * Only start it if we are
+         * currently on the welcome page.
+         */
+
+        const content =
+          document.getElementById('content');
+
+        const welcome =
+          content.querySelector('.welcome-message');
+
+        if (welcome) {
+
+          welcomeMusic.play().catch(function () {
+
+            console.log(
+              "Music could not be started."
+            );
+
+          });
+
         }
 
+      },
+      { once: true }
+    );
 
+
+    /* =========================================
+       WELCOME PAGE
+       ========================================= */
+
+    function showWelcome() {
+
+
+      /*
+       * Start/restart the music.
+       */
+
+      startWelcomeMusic();
+
+
+      /*
+       * Show the welcome page.
+       */
+
+      document.getElementById('content').innerHTML = `
+
+        <div class="welcome-message">
+
+          <p>
+            In addition to my work with institutions,
+            I also undertake freelance projects,
+            which allows me to collaborate with people
+            from around the world.
+          </p>
+
+          <p>
+            If you would like to collaborate with me
+            on a scientific paper, develop a STEM project,
+            or simply discuss science, please feel free
+            to contact me.
+          </p>
+
+        </div>
+
+      `;
+
+    }
+
+
+    /* =========================================
+       SUBMENUS
+       ========================================= */
 
     function toggleSubmenu(submenuId) {
 
-      const submenu = document.getElementById(submenuId);
+
+      const submenu =
+        document.getElementById(submenuId);
+
 
       submenu.classList.toggle('hidden');
 
     }
 
 
+    /* =========================================
+       LOAD PROJECT CONTENT
+       ========================================= */
+
     function loadContent(url) {
+
+
+      /*
+       * Stop the welcome music when
+       * entering a project.
+       */
+
+      stopWelcomeMusic();
+
+
+      /*
+       * Load the selected page.
+       */
 
       fetch(url)
 
         .then(response => {
 
+
           if (!response.ok) {
-            throw new Error("Could not load " + url);
+
+            throw new Error(
+              "Could not load " + url
+            );
+
           }
+
 
           return response.text();
 
         })
 
+
         .then(html => {
 
-          const content = document.getElementById('content');
+
+          const content =
+            document.getElementById('content');
+
+
+          /*
+           * Insert project content.
+           */
 
           content.innerHTML = html;
 
 
-          const pageCredit = document.createElement('div');
+          /*
+           * Add the page credit.
+           */
 
-          pageCredit.className = 'page-credit';
+          const pageCredit =
+            document.createElement('div');
+
+
+          pageCredit.className =
+            'page-credit';
+
 
           pageCredit.innerHTML = `
-            The content of <em>STEM-people</em> is regularly maintained and updated.
-            In all cases, when content, images, data, or materials from this website
-            are used, <strong>STEM-people</strong> should be acknowledged as the source,
-            and the corresponding webpage address should be included.
+
+            The content of <em>STEM-people</em>
+            is regularly maintained and updated.
+
+            In all cases, when content, images,
+            data, or materials from this website
+            are used, <strong>STEM-people</strong>
+            should be acknowledged as the source,
+            and the corresponding webpage address
+            should be included.
+
           `;
+
 
           content.appendChild(pageCredit);
 
+
         })
+
 
         .catch(error => {
 
+
           console.error(error);
 
-          document.getElementById('content').innerHTML =
-            "<p>Error loading the content.</p>";
+
+          document.getElementById('content').innerHTML = `
+
+            <p>
+              Error loading the content.
+            </p>
+
+          `;
+
 
         });
 
     }
+
 
   </script>
 
 
 </body>
 
-<!-- Background music -->
-<audio id="background-music" loop preload="auto">
-  <source src="audio/space-ambient-cinematic-music.mp3" type="audio/mpeg">
-</audio>
-
-<button id="music-toggle"
-        type="button"
-        aria-label="Mute music">
-  ♪
-</button>
-
-
-  
 </html>
+
