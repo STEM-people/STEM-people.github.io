@@ -1,483 +1,291 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>12 August 2026 — Total Solar Eclipse</title>
-
-
-  <style>
-
-
-    /* =========================================================
-       GENERAL
-       ========================================================= */
-
-    body {
-      margin: 0;
-      padding: 0 20px 60px;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      line-height: 1.25;
-    }
-
-
-    /* =========================================================
-       MAIN ECLIPSE PHOTOGRAPH
-       This is the only photograph kept at full size.
-       ========================================================= */
-
-    .eclipse-main-photo {
-      max-width: 850px;
-      margin: 30px auto 50px;
-      text-align: center;
-    }
-
-    .eclipse-main-photo img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .eclipse-main-photo figcaption {
-      margin-top: 10px;
-      font-size: 0.95rem;
-      font-style: italic;
-    }
-
-
-    /* =========================================================
-       NORMAL CONTENT PHOTOGRAPHS
-       83% of the size of the main photograph.
-       These are NOT clickable.
-       ========================================================= */
-
-    .content-photo {
-      width: 83%;
-      max-width: 706px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-
-    /* =========================================================
-       EQUIPMENT
-       ========================================================= */
-
-    .equipment-section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    .equipment-section h2 {
-      margin-bottom: 18px;
-    }
-
-    .equipment-intro {
-      max-width: 850px;
-      margin: 0 auto 40px auto;
-      line-height: 1.7;
-      font-size: 1.05rem;
-    }
-
-    .equipment-item {
-      margin: 45px auto;
-      max-width: 900px;
-    }
-
-    .equipment-item figure {
-      margin: 0;
-      text-align: center;
-    }
-
-    .equipment-item figcaption {
-      width: 83%;
-      margin: 12px auto 0;
-      padding: 0 15px;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      font-style: italic;
-      box-sizing: border-box;
-    }
-
-    .equipment-science {
-      max-width: 850px;
-      margin: 45px auto 0 auto;
-      padding: 25px 30px;
-      border-left: 3px solid #555;
-      line-height: 1.7;
-    }
-
-    .equipment-science strong {
-      font-weight: 600;
-    }
-
-
-    /* =========================================================
-       PROJECTION EXPERIMENTS
-       ========================================================= */
-
-    .projection-section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    .projection-intro {
-      max-width: 850px;
-      margin: 0 auto 40px auto;
-      line-height: 1.7;
-      font-size: 1.05rem;
-    }
-
-    .experiment {
-      max-width: 900px;
-      margin: 50px auto;
-    }
-
-    .experiment figure {
-      margin: 0;
-      text-align: center;
-    }
-
-
-    /* =========================================================
-       NORMAL EXPERIMENT PHOTOGRAPHS
-       83%
-       These are NOT clickable.
-       ========================================================= */
-
-    .experiment figure > img {
-      width: 83%;
-      max-width: 706px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .experiment figcaption {
-      width: 83%;
-      margin: 12px auto 0;
-      padding: 0 15px;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      font-style: italic;
-      box-sizing: border-box;
-    }
-
-    .experiment-description {
-      max-width: 850px;
-      margin: 25px auto;
-      line-height: 1.7;
-    }
-
-
-    /* =========================================================
-       SCIENCE NOTE
-       ========================================================= */
-
-    .science-note {
-      max-width: 850px;
-      margin: 30px auto;
-      padding: 25px 30px;
-      border-left: 3px solid #555;
-      line-height: 1.7;
-    }
-
-
-    /* =========================================================
-       SKIMMER EXPERIMENT
-
-       Normal photographs = 83%
-
-       Skimmer photographs = 100%
-
-       The two skimmer photographs are therefore approximately
-       20% larger than the normal photographs.
-       ========================================================= */
-
-    .skimmer-experiment {
-      max-width: 900px;
-      margin: 50px auto;
-    }
-
-    .skimmer-figure {
-      margin: 30px auto;
-    }
-
-    .skimmer-photo-pair {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      align-items: center;
-      margin: 25px 0 10px;
-    }
-
-    .skimmer-photo {
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-
-    /* =========================================================
-       ONLY THESE TWO PHOTOS ARE CLICKABLE
-       ========================================================= */
-
-    .skimmer-photo a {
-      display: block;
-      width: 100%;
-      cursor: zoom-in;
-      text-decoration: none;
-    }
-
-    .skimmer-photo a img {
-      width: 100%;
-      height: auto;
-      max-width: 100%;
-      display: block;
-      cursor: zoom-in;
-    }
-
-
-    /* =========================================================
-       COMMON CAPTION FOR THE TWO SKIMMER PHOTOS
-       ========================================================= */
-
-    .skimmer-caption {
-      margin-top: 15px;
-      padding: 0 10px;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      text-align: left;
-    }
-
-    .skimmer-explanation {
-      max-width: 850px;
-      margin: 25px auto;
-      line-height: 1.7;
-    }
-
-
-    /* =========================================================
-       ROBOTIC TELESCOPE OBSERVATION
-       ========================================================= */
-
-    .robotic-telescope-section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    .robotic-telescope-section p {
-      max-width: 850px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.7;
-    }
-
-    .robotic-telescope-section figure {
-      max-width: 900px;
-      margin: 40px auto;
-      text-align: center;
-    }
-
-    .robotic-telescope-section figcaption {
-      width: 83%;
-      margin: 12px auto 0;
-      padding: 0 15px;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      font-style: italic;
-      box-sizing: border-box;
-    }
-
-
-    /* =========================================================
-       SKIMMER LIGHTBOX
-       
-       NO JAVASCRIPT.
-
-       The browser uses :target when the user clicks one of
-       the two skimmer photographs.
-       ========================================================= */
-
-    .skimmer-lightbox {
-      display: none;
-
-      position: fixed;
-
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-
-      width: 100%;
-      height: 100%;
-
-      z-index: 99999;
-
-      background: rgba(0, 0, 0, 0.92);
-
-      align-items: center;
-      justify-content: center;
-
-      padding: 20px;
-
-      box-sizing: border-box;
-    }
-
-
-    /* This is what actually opens the lightbox. */
-
-    .skimmer-lightbox:target {
-      display: flex;
-    }
-
-
-    /*
-       Full-screen closing layer.
-    */
-
-    .skimmer-lightbox .close-layer {
-      position: absolute;
-
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-
-      width: 100%;
-      height: 100%;
-
-      cursor: zoom-out;
-
-      z-index: 1;
-    }
-
-
-    /*
-       Image sits above the closing layer.
-    */
-
-    .skimmer-lightbox .enlarged-image {
-      position: relative;
-
-      z-index: 2;
-
-      display: block;
-
-      width: auto;
-      height: auto;
-
-      max-width: 60vw;
-      max-height: 60vh;
-
-      object-fit: contain;
-
-      transform: scale(1.5);
-
-      transform-origin: center center;
-
-      pointer-events: none;
-    }
-
-
-    /* =========================================================
-       MOBILE
-       ========================================================= */
-
-    @media (max-width: 700px) {
-
-      body {
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-      .content-photo {
-        width: 100%;
-        max-width: none;
-      }
-
-      .equipment-item figcaption,
-      .experiment figcaption,
-      .robotic-telescope-section figcaption {
-        width: 100%;
-      }
-
-      .experiment figure > img {
-        width: 100%;
-        max-width: none;
-      }
-
-
-      /*
-         The two skimmer photographs stack vertically on
-         narrow screens.
-      */
-
-      .skimmer-photo-pair {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .skimmer-photo a {
-        width: 100%;
-      }
-
-      .skimmer-photo a img {
-        width: 100%;
-      }
-
-
-      /*
-         Enlarged photograph on mobile.
-      */
-
-      .skimmer-lightbox {
-        padding: 10px;
-      }
-
-      .skimmer-lightbox .enlarged-image {
-        max-width: 60vw;
-        max-height: 60vh;
-        transform: scale(1.5);
-      }
-
-  /* =========================================================
+<style>
+
+/* =========================================================
+   ECLIPSE 2026
+   ========================================================= */
+
+.eclipse-page {
+  margin: 0;
+  padding: 0 20px 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+.eclipse-page h1,
+.eclipse-page h2,
+.eclipse-page h3,
+.eclipse-page h4 {
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   MAIN ECLIPSE PHOTOGRAPH
+   ========================================================= */
+
+.eclipse-main-photo {
+  max-width: 850px;
+  margin: 30px auto 50px;
+  text-align: center;
+}
+
+.eclipse-main-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.eclipse-main-photo figcaption {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+
+/* =========================================================
+   NORMAL CONTENT PHOTOGRAPHS
+   ========================================================= */
+
+.eclipse-page .content-photo {
+  width: 83%;
+  max-width: 706px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   EQUIPMENT
+   ========================================================= */
+
+.eclipse-page .equipment-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.eclipse-page .equipment-section h2 {
+  margin-bottom: 18px;
+}
+
+.eclipse-page .equipment-intro {
+  max-width: 850px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.eclipse-page .equipment-item {
+  margin: 45px auto;
+  max-width: 900px;
+}
+
+.eclipse-page .equipment-item figure {
+  margin: 0;
+  text-align: center;
+}
+
+.eclipse-page .equipment-item figcaption {
+  width: 83%;
+  margin: 12px auto 0;
+  padding: 0 15px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-style: italic;
+  box-sizing: border-box;
+}
+
+.eclipse-page .equipment-science {
+  max-width: 850px;
+  margin: 45px auto 0;
+  padding: 25px 30px;
+  border-left: 3px solid #555;
+  line-height: 1.7;
+}
+
+.eclipse-page .equipment-science strong {
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   PROJECTION EXPERIMENTS
+   ========================================================= */
+
+.eclipse-page .projection-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.eclipse-page .projection-intro {
+  max-width: 850px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.eclipse-page .experiment {
+  max-width: 900px;
+  margin: 50px auto;
+}
+
+.eclipse-page .experiment figure {
+  margin: 0;
+  text-align: center;
+}
+
+.eclipse-page .experiment figure > img {
+  width: 83%;
+  max-width: 706px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.eclipse-page .experiment figcaption {
+  width: 83%;
+  margin: 12px auto 0;
+  padding: 0 15px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-style: italic;
+  box-sizing: border-box;
+}
+
+.eclipse-page .experiment-description {
+  max-width: 850px;
+  margin: 25px auto;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SCIENCE NOTE
+   ========================================================= */
+
+.eclipse-page .science-note {
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 25px 30px;
+  border-left: 3px solid #555;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SKIMMER EXPERIMENT
+   ========================================================= */
+
+.eclipse-page .skimmer-experiment {
+  max-width: 900px;
+  margin: 50px auto;
+}
+
+.eclipse-page .skimmer-figure {
+  margin: 30px auto;
+}
+
+.eclipse-page .skimmer-photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  margin: 25px 0 10px;
+}
+
+.eclipse-page .skimmer-photo {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eclipse-page .skimmer-photo a {
+  display: block;
+  width: 100%;
+  cursor: zoom-in;
+  text-decoration: none;
+}
+
+.eclipse-page .skimmer-photo a img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  cursor: zoom-in;
+}
+
+.eclipse-page .skimmer-caption {
+  margin-top: 15px;
+  padding: 0 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.eclipse-page .skimmer-explanation {
+  max-width: 850px;
+  margin: 25px auto;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   ROBOTIC TELESCOPE OBSERVATION
+   ========================================================= */
+
+.eclipse-page .robotic-telescope-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.eclipse-page .robotic-telescope-section p {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.eclipse-page .robotic-telescope-section figure {
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.eclipse-page .robotic-telescope-section figcaption {
+  width: 83%;
+  margin: 12px auto 0;
+  padding: 0 15px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-style: italic;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
    SCIENTIFIC CONTEXT
    ========================================================= */
 
-.scientific-context {
+.eclipse-page .scientific-context {
   max-width: 900px;
   margin: 70px auto;
   padding: 0 20px;
 }
 
-.scientific-context h2 {
+.eclipse-page .scientific-context h2 {
   margin-bottom: 30px;
 }
 
-.scientific-context h3 {
+.eclipse-page .scientific-context h3 {
   margin-top: 35px;
   margin-bottom: 20px;
 }
 
-.scientific-context p {
+.eclipse-page .scientific-context p {
   line-height: 1.75;
   margin: 18px 0;
 }
@@ -487,24 +295,28 @@
    EQUATION
    ========================================================= */
 
-.scientific-equation {
+.eclipse-page .scientific-equation {
   text-align: center;
   margin: 30px auto;
   font-size: 1.35rem;
 }
 
-.equation-symbol {
+.eclipse-page .equation-symbol {
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
 }
 
 
 /* =========================================================
-   THREE HANDWRITTEN PHOTOGRAPHS
-   These are NOT clickable.
+   SCIENTIFIC CONTEXT PHOTOS
    ========================================================= */
 
-.scientific-context-photo {
+.eclipse-page .scientific-context-figure {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.eclipse-page .scientific-context-photo {
   width: 27.67%;
   height: auto;
   display: block;
@@ -514,85 +326,173 @@
 
 
 /* =========================================================
+   SKIMMER LIGHTBOX
+   ========================================================= */
+
+.eclipse-page .skimmer-lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.92);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.eclipse-page .skimmer-lightbox:target {
+  display: flex;
+}
+
+.eclipse-page .skimmer-lightbox .close-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-out;
+  z-index: 1;
+}
+
+.eclipse-page .skimmer-lightbox .enlarged-image {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 60vw;
+  max-height: 60vh;
+  object-fit: contain;
+  transform: scale(1.5);
+  transform-origin: center center;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   WHAT I OBSERVED
+   ========================================================= */
+
+.eclipse-page .what-i-observed {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.eclipse-page .what-i-observed p {
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   ECLIPSE VIDEO
+   ========================================================= */
+
+.eclipse-page .eclipse-video {
+  display: block;
+  width: 83%;
+  max-width: 750px;
+  height: auto;
+  margin: 30px auto 15px;
+}
+
+.eclipse-page .video-caption {
+  width: 83%;
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+
+/* =========================================================
    MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
 
-  .scientific-context {
-    padding: 0 15px;
+  .eclipse-page {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
-  .scientific-context-figure {
+  .eclipse-page .content-photo {
     width: 100%;
     max-width: none;
   }
 
-  .scientific-equation {
+  .eclipse-page .equipment-item figcaption,
+  .eclipse-page .experiment figcaption,
+  .eclipse-page .robotic-telescope-section figcaption {
+    width: 100%;
+  }
+
+  .eclipse-page .experiment figure > img {
+    width: 100%;
+    max-width: none;
+  }
+
+  .eclipse-page .skimmer-photo-pair {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .eclipse-page .skimmer-photo a {
+    width: 100%;
+  }
+
+  .eclipse-page .skimmer-photo a img {
+    width: 100%;
+  }
+
+  .eclipse-page .skimmer-lightbox {
+    padding: 10px;
+  }
+
+  .eclipse-page .skimmer-lightbox .enlarged-image {
+    max-width: 60vw;
+    max-height: 60vh;
+    transform: scale(1.5);
+  }
+
+  .eclipse-page .scientific-context {
+    padding: 0 15px;
+  }
+
+  .eclipse-page .scientific-context-figure {
+    width: 100%;
+    max-width: none;
+  }
+
+  .eclipse-page .scientific-equation {
     font-size: 1.2rem;
+  }
+
+  .eclipse-page .eclipse-video {
+    width: 100%;
+    max-width: none;
+  }
+
+  .eclipse-page .video-caption {
+    width: 100%;
+    max-width: none;
   }
 
 }
 
-    }
+</style>
 
-    /* =========================================================
-   WHAT I OBSERVED
-   ========================================================= */
 
-    .what-i-observed {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-    
-    .what-i-observed p {
-      line-height: 1.7;
-    }
-    
-    
-    /* =========================================================
-       ECLIPSE VIDEO
-       ========================================================= */
-    
-    .eclipse-video {
-      display: block;
-      width: 83%;
-      max-width: 750px;
-      height: auto;
-      margin: 30px auto 15px;
-    }
-    
-    .video-caption {
-      width: 83%;
-      max-width: 750px;
-      margin: 0 auto;
-      text-align: center;
-      font-size: 0.95rem;
-      font-style: italic;
-    }
-    
-    
-    @media (max-width: 700px) {
-    
-      .eclipse-video {
-        width: 100%;
-        max-width: none;
-      }
-    
-      .video-caption {
-        width: 100%;
-        max-width: none;
-      }
-    
-    }
-    
-      </style>
-    
-    </head>
-    
-    
-    <body>
+<div class="eclipse-page">
 
 
   <!-- =========================================================
@@ -609,20 +509,13 @@
   <h2>Observation</h2>
 
   <p>
-
     <strong>Date:</strong>
-
     12 August 2026
-
   </p>
 
-
   <p>
-
     <strong>Location:</strong>
-
     Herrera de Pisuerga Aerodrome, Palencia, Spain
-
   </p>
 
 
@@ -637,11 +530,8 @@
       alt="Total solar eclipse at maximum, photographed with my mobile phone, with Venus visible in the upper left">
 
     <figcaption>
-
       Totality at maximum eclipse, photographed with my mobile phone.
-
       Venus is visible in the upper left.
-
     </figcaption>
 
   </figure>
@@ -655,7 +545,6 @@
 
     <h2>The Equipment I Used</h2>
 
-
     <p class="equipment-intro">
 
       For this eclipse, I wanted not only to observe the event,
@@ -668,8 +557,6 @@
 
     </p>
 
-
-    <!-- MATERIALS -->
 
     <div class="equipment-item">
 
@@ -694,8 +581,6 @@
 
     </div>
 
-
-    <!-- COLANDER / SKIMMER -->
 
     <div class="equipment-item">
 
@@ -734,7 +619,6 @@
 
       </p>
 
-
       <p>
 
         During a solar eclipse, the projected image can reproduce
@@ -761,7 +645,6 @@
 
     <h2>Homemade Projection Experiments</h2>
 
-
     <p class="projection-intro">
 
       I wanted to explore the eclipse using simple optical experiments
@@ -773,14 +656,9 @@
     </p>
 
 
-    <!-- =======================================================
-         EXPERIMENT 1
-         ======================================================= -->
-
     <div class="experiment">
 
       <h3>1. A Homemade Pinhole Camera</h3>
-
 
       <figure>
 
@@ -799,7 +677,6 @@
 
       </figure>
 
-
       <p class="experiment-description">
 
         I used a Pringles tube to create a simple camera obscura.
@@ -808,7 +685,6 @@
         form an image of the Sun on the projection surface.
 
       </p>
-
 
       <div class="science-note">
 
@@ -824,7 +700,6 @@
 
         </p>
 
-
         <p>
 
           The image is inverted because rays from the upper part of
@@ -838,14 +713,9 @@
     </div>
 
 
-    <!-- =======================================================
-         EXPERIMENT 2
-         ======================================================= -->
-
     <div class="experiment">
 
       <h3>2. Projecting the Sun Through a Colander</h3>
-
 
       <figure>
 
@@ -862,7 +732,6 @@
 
       </figure>
 
-
       <p class="experiment-description">
 
         I then used a fruit colander with many small openings.
@@ -871,7 +740,6 @@
         creating a pattern of multiple solar images.
 
       </p>
-
 
       <div class="science-note">
 
@@ -886,7 +754,6 @@
 
         </p>
 
-
         <p>
 
           During an eclipse, these projected images reproduce the
@@ -899,14 +766,9 @@
     </div>
 
 
-    <!-- =======================================================
-         EXPERIMENT 3
-         ======================================================= -->
-
     <div class="experiment">
 
       <h3>3. Projecting the Eclipse</h3>
-
 
       <figure>
 
@@ -923,7 +785,6 @@
 
       </figure>
 
-
       <p class="experiment-description">
 
         I projected the Sun onto a white cardboard screen and was able
@@ -931,7 +792,6 @@
         moved across it.
 
       </p>
-
 
       <div class="science-note">
 
@@ -946,7 +806,6 @@
 
         </p>
 
-
         <p>
 
           As the Moon covered an increasing fraction of the solar disk,
@@ -959,14 +818,9 @@
     </div>
 
 
-    <!-- =======================================================
-         EXPERIMENT 4 — SKIMMER
-         ======================================================= -->
-
     <div class="experiment skimmer-experiment">
 
       <h3>4. Continuing the Projection Experiment: The Skimmer</h3>
-
 
       <p class="experiment-description">
 
@@ -982,13 +836,7 @@
 
       <figure class="skimmer-figure">
 
-
         <div class="skimmer-photo-pair">
-
-
-          <!-- =================================================
-               LEFT PHOTO — INCOMING
-               ================================================= -->
 
           <div class="skimmer-photo">
 
@@ -1005,10 +853,6 @@
           </div>
 
 
-          <!-- =================================================
-               RIGHT PHOTO — OUTGOING
-               ================================================= -->
-
           <div class="skimmer-photo">
 
             <a
@@ -1023,20 +867,14 @@
 
           </div>
 
-
         </div>
 
-
-        <!-- =================================================
-             ONE COMMON CAPTION
-             ================================================= -->
 
         <figcaption class="skimmer-caption">
 
           <strong>Projection through the skimmer.</strong>
 
           <br><br>
-
 
           <strong>Photo on the left — incoming light:</strong>
 
@@ -1046,9 +884,7 @@
           The small openings act approximately as individual
           pinholes through which the incoming light passes.
 
-
           <br><br>
-
 
           <strong>Photo on the right — outgoing light:</strong>
 
@@ -1058,9 +894,7 @@
           Each opening can produce its own image of the partially
           eclipsed Sun.
 
-
           <br><br>
-
 
           The two photographs document the same optical process:
 
@@ -1072,10 +906,6 @@
 
       </figure>
 
-
-      <!-- =================================================
-           SCIENTIFIC EXPLANATION
-           ================================================= -->
 
       <div class="science-note">
 
@@ -1092,7 +922,6 @@
 
         </p>
 
-
         <p>
 
           Each opening therefore forms its own image of the Sun.
@@ -1101,7 +930,6 @@
           appear simultaneously on the projection surface.
 
         </p>
-
 
         <p>
 
@@ -1118,18 +946,11 @@
     </div>
 
 
-    <!-- =======================================================
-         SUMMARY
-         ======================================================= -->
-
     <div class="science-note">
 
       <p>
-
         <strong>What I learned from these experiments.</strong>
-
       </p>
-
 
       <p>
 
@@ -1145,7 +966,6 @@
 
     </div>
 
-
   </section>
 
 
@@ -1157,14 +977,12 @@
 
     <h2>Robotic Telescope Observation</h2>
 
-
     <p>
 
       During the eclipse, I also had the opportunity to observe the Sun
       remotely through a robotic telescope operated by a friend.
 
     </p>
-
 
     <p>
 
@@ -1175,7 +993,6 @@
       both the solar disk and a visible sunspot.
 
     </p>
-
 
     <figure>
 
@@ -1195,9 +1012,7 @@
 
     </figure>
 
-
     <h3>Observing a Sunspot</h3>
-
 
     <p>
 
@@ -1213,7 +1028,6 @@
 
     </p>
 
-
     <p>
 
       This observation was especially interesting because it allowed me
@@ -1226,119 +1040,101 @@
   </section>
 
 
-
-
-
   <!-- =========================================================
-     SCIENTIFIC CONTEXT
-     ========================================================= -->
+       SCIENTIFIC CONTEXT
+       ========================================================= -->
 
-<section class="scientific-context">
+  <section class="scientific-context">
 
-  <h2>Scientific Context</h2>
-    
-    
-      <h3>
-        Why Can a Solar Eclipse Be Total? — The Geometrical Coincidence
-      </h3>
-    
-    
-      <p>
-        The possibility of a total solar eclipse is related to the
-        apparent angular size of the Sun and the Moon as seen from Earth.
-      </p>
-    
-    
-      <p>
-        For relatively small angles, the apparent angular size can be
-        approximated by:
-      </p>
-    
-    
-      <div class="scientific-equation">
-    
-        <span class="equation-symbol">
-          θ ≈ D / d
-        </span>
-    
-      </div>
-    
-    
-      <p>
-        where <strong>D</strong> is the diameter of the object and
-        <strong>d</strong> is its distance from the observer.
-      </p>
-    
-    
-      <!-- =======================================================
-           FIRST PHOTOGRAPH
-           ======================================================= -->
-    
-      <figure class="scientific-context-figure">
-    
-        <img
-          src="/astronomy/eclipse-2026/media/1.jpg"
-          alt="Handwritten explanation of the geometrical coincidence that makes a total solar eclipse possible">
-    
-      </figure>
-    
-    
-      <!-- =======================================================
-           SECOND PHOTOGRAPH
-           ======================================================= -->
-    
-      <figure class="scientific-context-figure">
-    
-        <img
-          src="/astronomy/eclipse-2026/media/2.jpg"
-          alt="Handwritten numerical explanation comparing the physical sizes and distances of the Sun and Moon">
-    
-      </figure>
-    
-    
-      <!-- =======================================================
-           THIRD PHOTOGRAPH
-           ======================================================= -->
-    
-      <figure class="scientific-context-figure">
-    
-        <img
-          src="/astronomy/eclipse-2026/media/3.jpg"
-          alt="Handwritten geometrical explanation using similar triangles to compare the apparent sizes of the Sun and Moon">
-    
-      </figure>
-    
-    
-      <!-- =======================================================
-           THE COINCIDENCE IS NOT EXACT OR PERMANENT
-           ======================================================= -->
-    
-      <h3>
-        The coincidence is not exact or permanent
-      </h3>
-    
-    
-      <p>
-        The Moon's orbit is elliptical, so the Earth–Moon distance changes.
-        The Earth is also at different distances from the Sun during the
-        year.
-      </p>
-    
-    
-      <p>
-        Therefore, sometimes the Moon can completely cover the solar disk,
-        producing a total solar eclipse, while at other times a ring of
-        photosphere remains visible around the Moon, producing an annular
-        solar eclipse.
-      </p>
-    
-    
-    </section>
+    <h2>Scientific Context</h2>
+
+    <h3>
+      Why Can a Solar Eclipse Be Total? — The Geometrical Coincidence
+    </h3>
+
+    <p>
+
+      The possibility of a total solar eclipse is related to the
+      apparent angular size of the Sun and the Moon as seen from Earth.
+
+    </p>
+
+    <p>
+
+      For relatively small angles, the apparent angular size can be
+      approximated by:
+
+    </p>
+
+    <div class="scientific-equation">
+
+      <span class="equation-symbol">
+        θ ≈ D / d
+      </span>
+
+    </div>
+
+    <p>
+
+      where <strong>D</strong> is the diameter of the object and
+      <strong>d</strong> is its distance from the observer.
+
+    </p>
+
+
+    <figure class="scientific-context-figure">
+
+      <img
+        src="/astronomy/eclipse-2026/media/1.jpg"
+        alt="Handwritten explanation of the geometrical coincidence that makes a total solar eclipse possible">
+
+    </figure>
+
+
+    <figure class="scientific-context-figure">
+
+      <img
+        src="/astronomy/eclipse-2026/media/2.jpg"
+        alt="Handwritten numerical explanation comparing the physical sizes and distances of the Sun and Moon">
+
+    </figure>
+
+
+    <figure class="scientific-context-figure">
+
+      <img
+        src="/astronomy/eclipse-2026/media/3.jpg"
+        alt="Handwritten geometrical explanation using similar triangles to compare the apparent sizes of the Sun and Moon">
+
+    </figure>
+
+
+    <h3>
+      The coincidence is not exact or permanent
+    </h3>
+
+    <p>
+
+      The Moon's orbit is elliptical, so the Earth–Moon distance changes.
+      The Earth is also at different distances from the Sun during the
+      year.
+
+    </p>
+
+    <p>
+
+      Therefore, sometimes the Moon can completely cover the solar disk,
+      producing a total solar eclipse, while at other times a ring of
+      photosphere remains visible around the Moon, producing an annular
+      solar eclipse.
+
+    </p>
+
+  </section>
 
 
   <!-- =========================================================
        SKIMMER LEFT LIGHTBOX
-       NO JAVASCRIPT
        ========================================================= -->
 
   <div
@@ -1348,17 +1144,11 @@
     aria-modal="true"
     aria-label="Enlarged left skimmer photograph">
 
-
-    <!-- Clicking the dark area closes the image -->
-
     <a
       href="#"
       class="close-layer"
       aria-label="Close enlarged photograph">
     </a>
-
-
-    <!-- Enlarged image -->
 
     <img
       class="enlarged-image"
@@ -1370,7 +1160,6 @@
 
   <!-- =========================================================
        SKIMMER RIGHT LIGHTBOX
-       NO JAVASCRIPT
        ========================================================= -->
 
   <div
@@ -1380,17 +1169,11 @@
     aria-modal="true"
     aria-label="Enlarged right skimmer photograph">
 
-
-    <!-- Clicking the dark area closes the image -->
-
     <a
       href="#"
       class="close-layer"
       aria-label="Close enlarged photograph">
     </a>
-
-
-    <!-- Enlarged image -->
 
     <img
       class="enlarged-image"
@@ -1399,65 +1182,63 @@
 
   </div>
 
-<!-- =========================================================
-     WHAT I OBSERVED
-     ========================================================= -->
 
-<section class="what-i-observed">
+  <!-- =========================================================
+       WHAT I OBSERVED
+       ========================================================= -->
 
-  <h2>What I Observed</h2>
+  <section class="what-i-observed">
 
+    <h2>What I Observed</h2>
 
-  <p>
-    During the total solar eclipse, I observed the changing appearance
-    of the Sun as the Moon progressively covered the solar disk,
-    reaching totality at the maximum of the eclipse.
-  </p>
+    <p>
 
+      During the total solar eclipse, I observed the changing appearance
+      of the Sun as the Moon progressively covered the solar disk,
+      reaching totality at the maximum of the eclipse.
 
-  <!-- =======================================================
-       VIDEO — MOMENT OF MAXIMUM ECLIPSE
-       ======================================================= -->
-
-  <h3>
-    The Moment of Maximum Eclipse
-  </h3>
+    </p>
 
 
-  <p>
-    This video shows what I saw and recorded at the moment of
-    maximum eclipse.
-  </p>
+    <h3>
+      The Moment of Maximum Eclipse
+    </h3>
+
+    <p>
+
+      This video shows what I saw and recorded at the moment of
+      maximum eclipse.
+
+    </p>
 
 
-  <video
-    class="eclipse-video"
-    controls
-    playsinline
-    preload="metadata">
+    <video
+      class="eclipse-video"
+      controls
+      playsinline
+      preload="metadata">
 
-    <source
-      src="/astronomy/eclipse-2026/media/momentOfMaximeEclipse.mp4"
-      type="video/mp4">
+      <source
+        src="/astronomy/eclipse-2026/media/momentOfMaximeEclipse.mp4"
+        type="video/mp4">
 
-    Your browser does not support HTML5 video.
+      Your browser does not support HTML5 video.
 
-  </video>
-
-
-  <p class="video-caption">
-    Video recorded by me at the moment of maximum eclipse,
-    on 12 August 2026.
-  </p>
+    </video>
 
 
-</section>
+    <p class="video-caption">
+
+      Video recorded by me at the moment of maximum eclipse,
+      on 12 August 2026.
+
+    </p>
+
+  </section>
 
 
-  
-</body>
+</div>
 
-</html>
 
 
 
