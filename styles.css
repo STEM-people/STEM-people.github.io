@@ -1,300 +1,478 @@
 
+```css
+/* =========================================================
+   STEM PEOPLE — MAIN STYLES
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+html,
 body {
-    background-color: #f8f9fa;
-  }
-  .profile-img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  .left-column {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    background-color: #000000;
+}
+
+
+/* =========================================================
+   LEFT COLUMN
+   ========================================================= */
+
+.left-column {
     min-height: 100vh;
     background-color: #ffffff;
     border-right: 1px solid #dee2e6;
     padding: 2rem;
-  }
-  .contact-info {
+}
+
+
+/* Profile image */
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* Contact information */
+
+.contact-info {
     margin-top: 1.5rem;
     font-size: 0.95rem;
-  }
-  .project-menu {
+}
+
+
+/* Project menu */
+
+.project-menu {
     margin-top: 2rem;
-  }
-  .project-menu a {
+}
+
+.project-menu a {
     display: block;
     margin: 0.5rem 0;
     text-decoration: none;
     color: #007bff;
-  }
-  .project-menu a:hover {
+}
+
+.project-menu a:hover {
     text-decoration: underline;
-  }
-  .content-area {
+}
+
+
+/* =========================================================
+   RIGHT COLUMN — DEEP SPACE
+   ========================================================= */
+
+.content-area {
+
+    position: relative;
+
+    min-height: 100vh;
+
     padding: 2rem;
-  }
-  .standard-img {
-    width: 40%;
-    display: block;
-    margin: 10px auto;
-  }
+
+    overflow: hidden;
+
+    background-color: #000000;
+
+    color: #ffffff;
+
+}
 
 
-  @media (max-width: 768px) {
-    .standard-img {
-      width: 60%;
+/*
+ * The content must remain above
+ * the space background.
+ */
+
+.content-area > #content {
+    position: relative;
+    z-index: 10;
+}
+
+
+/* =========================================================
+   INFINITE SPACE BACKGROUND
+   ========================================================= */
+
+
+/*
+ * First star layer
+ */
+
+.content-area::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -50%;
+
+    width: 200%;
+    height: 200%;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.95) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,255,255,0.75) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,255,255,0.55) 1px, transparent 1.5px);
+
+    background-size:
+        130px 130px,
+        190px 190px,
+        270px 270px;
+
+    background-position:
+        20px 30px,
+        80px 110px,
+        150px 60px;
+
+    animation:
+        deepSpaceDrift 120s linear infinite;
+
+    opacity: 0.65;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/*
+ * Second star layer.
+ * Smaller and faster movement gives
+ * the impression of different depths.
+ */
+
+.content-area::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -50%;
+
+    width: 200%;
+    height: 200%;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.9) 0.7px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.5) 0.8px, transparent 1.2px);
+
+    background-size:
+        85px 85px,
+        155px 155px;
+
+    background-position:
+        40px 20px,
+        100px 70px;
+
+    animation:
+        deepSpaceDriftFast 70s linear infinite;
+
+    opacity: 0.45;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   SPACE ANIMATIONS
+   ========================================================= */
+
+@keyframes deepSpaceDrift {
+
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
     }
-  }
 
-  @media (max-width: 480px) {
-    .standard-img {
-      width: 90%;
+    50% {
+        transform: translate3d(-3%, -2%, 0) scale(1.04);
     }
 
-    
-        /* =========================================
-       PROJECT CONTENT — BLACK THEME
-       ========================================= */
-    
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+}
+
+
+@keyframes deepSpaceDriftFast {
+
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(4%, 3%, 0) scale(1.08);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   WELCOME MESSAGE
+   ========================================================= */
+
+.content-area .welcome-message {
+
+    position: relative;
+
+    z-index: 20;
+
+    max-width: 800px;
+
+    margin: 120px auto 0;
+
+    padding: 0 30px;
+
+    text-align: center;
+
+    font-size: 1.1rem;
+
+    line-height: 1.7;
+
+    color: #ffffff;
+
+}
+
+
+/* Welcome paragraphs */
+
+.content-area .welcome-message p {
+
+    color: #ffffff !important;
+
+}
+
+
+/* =========================================================
+   PROJECT CONTENT
+   ========================================================= */
+
+.content-area #content {
+
+    color: #ffffff;
+
+}
+
+
+.content-area #content h1,
+.content-area #content h2,
+.content-area #content h3,
+.content-area #content h4,
+.content-area #content h5,
+.content-area #content h6,
+.content-area #content p,
+.content-area #content li,
+.content-area #content span,
+.content-area #content strong,
+.content-area #content em {
+
+    color: #ffffff !important;
+
+}
+
+
+/* =========================================================
+   PROJECT LINKS
+   ========================================================= */
+
+.content-area #content a {
+
+    color: #ffffff !important;
+
+    text-decoration-color: rgba(255,255,255,0.7);
+
+}
+
+
+.content-area #content a:hover {
+
+    color: #ffffff !important;
+
+    text-decoration-color: #ffffff;
+
+}
+
+
+/* =========================================================
+   REMOVE BOOTSTRAP LIGHT BACKGROUNDS
+   ========================================================= */
+
+.content-area .bg-light,
+.content-area .bg-white,
+.content-area .text-bg-light {
+
+    background-color: transparent !important;
+
+    color: #ffffff !important;
+
+}
+
+
+/* Bootstrap muted text */
+
+.content-area .text-muted {
+
+    color: #ffffff !important;
+
+}
+
+
+/* =========================================================
+   PROJECT IMAGES
+   ========================================================= */
+
+.content-area img {
+
+    max-width: 100%;
+
+    height: auto;
+
+}
+
+
+/* =========================================================
+   PAGE CREDIT
+   ========================================================= */
+
+.content-area .page-credit {
+
+    position: relative;
+
+    z-index: 20;
+
+    color: #ffffff !important;
+
+    background-color: transparent !important;
+
+    border-top: 1px solid rgba(255,255,255,0.35);
+
+}
+
+
+.content-area .page-credit strong {
+
+    color: #ffffff !important;
+
+}
+
+
+/* =========================================================
+   MUSIC
+   ========================================================= */
+
+
+/*
+ * The audio element itself is hidden because
+ * the music is intended as background music.
+ */
+
+#welcome-music {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .standard-img {
+
+        width: 60%;
+
+    }
+
     .content-area {
-        background-color: #000000;
-        color: #ffffff;
+
         min-height: 100vh;
+
+        padding: 1.5rem;
+
     }
-    
-    /* Todo el texto que se carga dentro de Projects */
-    .content-area p,
-    .content-area h1,
-    .content-area h2,
-    .content-area h3,
-    .content-area h4,
-    .content-area h5,
-    .content-area h6,
-    .content-area li,
-    .content-area span,
-    .content-area strong,
-    .content-area em {
-        color: #ffffff;
-    }
-    
-    /* Enlaces */
-    .content-area a {
-        color: #ffffff;
-    }
-    
-    .content-area a:hover {
-        color: #ffffff;
-    }
-    
-    /* Texto de bienvenida */
+
     .content-area .welcome-message {
-        color: #ffffff;
-    }
-    
-    /* Crédito inferior */
-    .content-area .page-credit {
-        color: #ffffff;
-        border-top-color: #ffffff;
-    }
-    
-    .content-area .page-credit strong {
-        color: #ffffff;
+
+        margin-top: 80px;
+
+        padding: 0 15px;
+
+        font-size: 1rem;
+
     }
 
+}
 
-    /* =========================================
-       RIGHT CONTENT — DARK PROJECT THEME
-       ========================================= */
-    
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .standard-img {
+
+        width: 90%;
+
+    }
+
+    .left-column {
+
+        padding: 1.5rem;
+
+    }
+
     .content-area {
-        background-color: #000000;
-        color: #ffffff;
-        min-height: 100vh;
-    }
-    
-    .content-area p,
-    .content-area h1,
-    .content-area h2,
-    .content-area h3,
-    .content-area h4,
-    .content-area h5,
-    .content-area h6,
-    .content-area li,
-    .content-area span,
-    .content-area strong,
-    .content-area em {
-        color: #ffffff;
-    }
-    
-    .content-area a {
-        color: #ffffff;
-    }
-    
-    .content-area a:hover {
-        color: #ffffff;
-    }
-    
-    
-    /* =========================================
-       MUSIC PLAYER
-       ========================================= */
-    
-    .contact-music {
-        margin: 70px auto 0;
-        text-align: center;
-        max-width: 500px;
-    }
-    
-    .music-title {
-        margin-bottom: 18px;
-        color: #ffffff;
-        font-size: 0.75rem;
-        font-weight: 500;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-    }
-    
-    .contact-music audio {
-        width: 100%;
-        max-width: 450px;
-    }
-    
-    .music-credit {
-        margin-top: 12px;
-        color: #ffffff;
-        font-size: 0.75rem;
-        opacity: 0.75;
-    }
-    
-    
-    /* =========================================
-       PAGE CREDIT
-       ========================================= */
-    
-    .content-area .page-credit {
-        color: #ffffff;
-        border-top-color: #ffffff;
+
+        padding: 1rem;
+
     }
 
+    .content-area .welcome-message {
 
-    
-        /* =========================================
-           BACKGROUND MUSIC
-           ========================================= */
-        
-        #music-toggle {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-        
-            width: 42px;
-            height: 42px;
-        
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            border-radius: 50%;
-        
-            background: #000000;
-            color: #ffffff;
-        
-            font-size: 18px;
-            cursor: pointer;
-        
-            z-index: 9999;
-        
-            transition: opacity 0.3s ease,
-                        background-color 0.3s ease;
-        }
-        
-        #music-toggle:hover {
-            background: #ffffff;
-            color: #000000;
-        }
-        
-        #music-toggle.muted {
-            opacity: 0.45;
-        }
+        margin-top: 60px;
 
-    
-    .content-area .page-credit strong {
-        color: #ffffff;
+        padding: 0 10px;
+
+        font-size: 0.95rem;
+
     }
 
-        
-        /* =========================================
-           RIGHT COLUMN — BLACK PROJECT AREA
-           ========================================= */
-        
-        .content-area {
-            background-color: #000000;
-            color: #ffffff;
-            min-height: 100vh;
-        }
-        
-        
-        /* =========================================
-           WELCOME TEXT
-           ========================================= */
-        
-        .content-area .welcome-message {
-            color: #ffffff;
-        }
-        
-        .content-area .welcome-message p {
-            color: #ffffff;
-        }
-        
-        
-        /* =========================================
-           PROJECT CONTENT
-           ========================================= */
-        
-        .content-area h1,
-        .content-area h2,
-        .content-area h3,
-        .content-area h4,
-        .content-area h5,
-        .content-area h6,
-        .content-area p,
-        .content-area li,
-        .content-area span,
-        .content-area strong,
-        .content-area em {
-            color: #ffffff;
-        }
-        
-        
-        /* =========================================
-           LINKS
-           ========================================= */
-        
-        .content-area a {
-            color: #ffffff;
-        }
-        
-        .content-area a:hover {
-            color: #ffffff;
-        }
-        
-        
-        /* =========================================
-           PAGE CREDIT
-           ========================================= */
-        
-        .content-area .page-credit {
-            color: #ffffff;
-            border-top-color: #ffffff;
-        }
-        
-        .content-area .page-credit strong {
-            color: #ffffff;
-        }
-        
-        
-        /* =========================================
-           OPTIONAL — IMAGES
-           ========================================= */
-        
-        .content-area img {
-            max-width: 100%;
-            height: auto;
-        }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .content-area::before,
+    .content-area::after {
+
+        animation: none;
+
+    }
+
+}
+```
