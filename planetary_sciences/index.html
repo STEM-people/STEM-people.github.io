@@ -1,79 +1,265 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Planetary Sciences</title>
+
+
   <style>
+
+    /* =====================================================
+       PLANETARY SCIENCES
+       Uses the same visual environment as Astronomy
+       ===================================================== */
+
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    h1 {
-      color: #2c3e50;
-      border-bottom: 2px solid #3498db;
-      padding-bottom: 10px;
-    }
-    .project-list {
-      margin-top: 30px;
-    }
-    .project-item {
-      margin: 15px 0;
-      padding: 15px;
-      background-color: #f8f9fa;
-      border-left: 4px solid #3498db;
-      border-radius: 4px;
-      transition: background-color 0.3s;
-    }
-    .project-item:hover {
-      background-color: #e9ecef;
-    }
-    .project-item h3 {
-      margin: 0 0 10px 0;
-      color: #2c3e50;
-    }
-    .project-item p {
+
       margin: 0;
-      color: #666;
+
+      padding: 0;
+
+      background: transparent;
+
+      color: #ffffff;
+
+      font-family: Arial, sans-serif;
+
     }
-    .project-link {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 15px;
-      background-color: #3498db;
-      color: white;
-      text-decoration: none;
+
+
+    /* =====================================================
+       TITLES
+       ===================================================== */
+
+    h1 {
+
+      color: #ffffff;
+
+      border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+
+      padding-bottom: 10px;
+
+    }
+
+
+    h2,
+    h3 {
+
+      color: #ffffff;
+
+    }
+
+
+    /* =====================================================
+       TEXT
+       ===================================================== */
+
+    p {
+
+      color: #ffffff;
+
+    }
+
+
+    /* =====================================================
+       PROJECT LIST
+       ===================================================== */
+
+    .project-list {
+
+      margin-top: 30px;
+
+    }
+
+
+    /* =====================================================
+       MARS PROJECT
+       ===================================================== */
+
+    .project-item {
+
+      margin: 15px 0;
+
+      padding: 15px;
+
+      /*
+       * No white or grey box.
+       * The project becomes part of
+       * the same deep-space background.
+       */
+
+      background-color: transparent;
+
+      border-left: 4px solid rgba(255, 255, 255, 0.65);
+
       border-radius: 4px;
-      transition: background-color 0.3s;
+
+      transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+
     }
+
+
+    /*
+     * Very subtle hover effect.
+     * It does NOT create a white box.
+     */
+
+    .project-item:hover {
+
+      background-color: rgba(255, 255, 255, 0.04);
+
+      border-left-color: #ffffff;
+
+    }
+
+
+    /* =====================================================
+       PROJECT TITLE
+       ===================================================== */
+
+    .project-item h3 {
+
+      margin: 0 0 10px 0;
+
+      color: #ffffff;
+
+    }
+
+
+    /* =====================================================
+       PROJECT DESCRIPTION
+       ===================================================== */
+
+    .project-item p {
+
+      margin: 0;
+
+      color: #ffffff;
+
+    }
+
+
+    /* =====================================================
+       PROJECT LINK
+       ===================================================== */
+
+    .project-link {
+
+      display: inline-block;
+
+      margin-top: 10px;
+
+      padding: 8px 15px;
+
+      background-color: transparent;
+
+      color: #ffffff;
+
+      text-decoration: none;
+
+      border: 1px solid rgba(255, 255, 255, 0.55);
+
+      border-radius: 4px;
+
+      transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+
+    }
+
+
     .project-link:hover {
-      background-color: #2980b9;
+
+      background-color: rgba(255, 255, 255, 0.10);
+
+      border-color: #ffffff;
+
+      color: #ffffff;
+
     }
+
   </style>
+
 </head>
+
+
 <body>
+
+
   <h1>Planetary Sciences</h1>
-  <p>Explora nuestros proyectos de investigación en ciencias planetarias.</p>
-  
+
+
+  <p>
+    Explora nuestros proyectos de investigación en ciencias planetarias.
+  </p>
+
+
   <div class="project-list">
-    <!-- Proyecto Mars -->
+
+
+    <!-- =================================================
+         MARS
+         ================================================= -->
+
     <div class="project-item">
+
       <h3>🔴 Mars</h3>
-      <p>Investigación y estudios relacionados con el planeta Marte.</p>
-      <a href="#" onclick="parent.loadContent('planetary_sciences/mars/index.html', 'Mars Works'); return false;" class="project-link">
+
+      <p>
+        Investigación y estudios relacionados con el planeta Marte.
+      </p>
+
+      <a
+        href="#"
+        onclick="parent.loadContent('planetary_sciences/mars/index.html'); return false;"
+        class="project-link"
+      >
         Ver proyectos de Mars →
       </a>
+
     </div>
 
-    <!-- Puedes agregar más planetas/proyectos aquí -->
-    <!-- Ejemplo:
+
+    <!-- =================================================
+         FUTURE PLANETS
+         ================================================= -->
+
+    <!--
+
     <div class="project-item">
+
       <h3>🪐 Saturn</h3>
-      <p>Estudios sobre Saturno y sus anillos.</p>
-      <a href="#" onclick="parent.loadContent('planetary_sciences/saturn/index.html', 'Saturn Works'); return false;" class="project-link">
+
+      <p>
+        Estudios sobre Saturno y sus anillos.
+      </p>
+
+      <a
+        href="#"
+        onclick="parent.loadContent('planetary_sciences/saturn/index.html'); return false;"
+        class="project-link"
+      >
         Ver proyectos de Saturn →
       </a>
+
     </div>
+
     -->
+
+
   </div>
+
+
 </body>
+
 </html>
+
