@@ -1,275 +1,275 @@
 
 /* =========================================================
-   STEM PEOPLE — MAIN STYLES
-   ========================================================= */
-
+STEM PEOPLE — MAIN STYLES
+========================================================= */
 
 /* =========================================================
-   GLOBAL
-   ========================================================= */
+GLOBAL
+========================================================= */
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
+margin: 0;
+padding: 0;
+min-height: 100%;
 }
 
 body {
-    background-color: #000000;
+background-color: #000000;
 }
-
 
 /* =========================================================
-   LEFT COLUMN
-   ========================================================= */
+LEFT COLUMN
+========================================================= */
 
 .left-column {
-    min-height: 100vh;
-    background-color: #ffffff;
-    border-right: 1px solid #dee2e6;
-    padding: 2rem;
+min-height: 100vh;
+background-color: #ffffff;
+border-right: 1px solid #dee2e6;
+padding: 2rem;
 }
-
 
 /* Profile image */
 
 .profile-img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
+width: 150px;
+height: 150px;
+object-fit: cover;
+border-radius: 50%;
 }
-
 
 /* Contact information */
 
 .contact-info {
-    margin-top: 1.5rem;
-    font-size: 0.95rem;
+margin-top: 1.5rem;
+font-size: 0.95rem;
 }
-
 
 /* Project menu */
 
 .project-menu {
-    margin-top: 2rem;
+margin-top: 2rem;
 }
 
 .project-menu a {
-    display: block;
-    margin: 0.5rem 0;
-    text-decoration: none;
-    color: #007bff;
+display: block;
+margin: 0.5rem 0;
+text-decoration: none;
+color: #007bff;
 }
 
 .project-menu a:hover {
-    text-decoration: underline;
+text-decoration: underline;
 }
 
-
 /* =========================================================
-   RIGHT COLUMN — DEEP SPACE
-   ========================================================= */
+RIGHT COLUMN — DEEP SPACE
+========================================================= */
 
 .content-area {
 
-    position: relative;
+```
+position: relative;
 
-    min-height: 100vh;
+min-height: 100vh;
 
-    padding: 2rem;
+padding: 2rem;
 
-    overflow: hidden;
+overflow: hidden;
 
-    background-color: #000000;
+background-color: #000000;
 
-    color: #ffffff;
+color: #ffffff;
+```
 
 }
 
-
 /*
- * The content must remain above
- * the space background.
- */
+
+* The content remains above the
+* static space background.
+  */
 
 .content-area > #content {
-    position: relative;
-    z-index: 10;
+position: relative;
+z-index: 10;
 }
 
-
 /* =========================================================
-   INFINITE SPACE BACKGROUND
-   ========================================================= */
-
+STATIC DEEP SPACE BACKGROUND
+========================================================= */
 
 /*
- * First star layer
- */
+
+* First star layer.
+*
+* IMPORTANT:
+* This layer is STATIC.
+* There is intentionally NO animation.
+  */
 
 .content-area::before {
 
-    content: "";
+```
+content: "";
 
-    position: absolute;
+position: absolute;
 
-    inset: -50%;
+inset: -50%;
 
-    width: 200%;
-    height: 200%;
+width: 200%;
+height: 200%;
 
-    background-image:
-        radial-gradient(circle, rgba(255,255,255,0.95) 1px, transparent 1.5px),
-        radial-gradient(circle, rgba(255,255,255,0.75) 1px, transparent 1.5px),
-        radial-gradient(circle, rgba(255,255,255,0.55) 1px, transparent 1.5px);
+background-image:
+    radial-gradient(
+        circle,
+        rgba(255,255,255,0.95) 1px,
+        transparent 1.5px
+    ),
+    radial-gradient(
+        circle,
+        rgba(255,255,255,0.75) 1px,
+        transparent 1.5px
+    ),
+    radial-gradient(
+        circle,
+        rgba(255,255,255,0.55) 1px,
+        transparent 1.5px
+    );
 
-    background-size:
-        130px 130px,
-        190px 190px,
-        270px 270px;
+background-size:
+    130px 130px,
+    190px 190px,
+    270px 270px;
 
-    background-position:
-        20px 30px,
-        80px 110px,
-        150px 60px;
+background-position:
+    20px 30px,
+    80px 110px,
+    150px 60px;
 
-    animation:
-        deepSpaceDrift 120s linear infinite;
+opacity: 0.65;
 
-    opacity: 0.65;
+pointer-events: none;
 
-    pointer-events: none;
+z-index: 0;
+```
 
-    z-index: 0;
 }
 
-
 /*
- * Second star layer.
- * Smaller and faster movement gives
- * the impression of different depths.
- */
+
+* Second star layer.
+*
+* This creates the impression of
+* different depths without movement.
+  */
 
 .content-area::after {
 
-    content: "";
+```
+content: "";
 
-    position: absolute;
+position: absolute;
 
-    inset: -50%;
+inset: -50%;
 
-    width: 200%;
-    height: 200%;
+width: 200%;
+height: 200%;
 
-    background-image:
-        radial-gradient(circle, rgba(255,255,255,0.9) 0.7px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.5) 0.8px, transparent 1.2px);
+background-image:
+    radial-gradient(
+        circle,
+        rgba(255,255,255,0.9) 0.7px,
+        transparent 1px
+    ),
+    radial-gradient(
+        circle,
+        rgba(255,255,255,0.5) 0.8px,
+        transparent 1.2px
+    );
 
-    background-size:
-        85px 85px,
-        155px 155px;
+background-size:
+    85px 85px,
+    155px 155px;
 
-    background-position:
-        40px 20px,
-        100px 70px;
+background-position:
+    40px 20px,
+    100px 70px;
 
-    animation:
-        deepSpaceDriftFast 70s linear infinite;
+opacity: 0.45;
 
-    opacity: 0.45;
+pointer-events: none;
 
-    pointer-events: none;
+z-index: 1;
+```
 
-    z-index: 1;
 }
-
 
 /* =========================================================
-   SPACE ANIMATIONS
-   ========================================================= */
+NO SPACE ANIMATION
+========================================================= */
 
-@keyframes deepSpaceDrift {
+/*
 
-    0% {
-        transform: translate3d(0, 0, 0) scale(1);
-    }
-
-    50% {
-        transform: translate3d(-3%, -2%, 0) scale(1.04);
-    }
-
-    100% {
-        transform: translate3d(0, 0, 0) scale(1);
-    }
-
-}
-
-
-@keyframes deepSpaceDriftFast {
-
-    0% {
-        transform: translate3d(0, 0, 0) scale(1);
-    }
-
-    50% {
-        transform: translate3d(4%, 3%, 0) scale(1.08);
-    }
-
-    100% {
-        transform: translate3d(0, 0, 0) scale(1);
-    }
-
-}
-
+* The previous versions contained:
+*
+* deepSpaceDrift
+* deepSpaceDriftFast
+*
+* Those animations have intentionally been removed.
+*
+* The space background is now completely static.
+  */
 
 /* =========================================================
-   WELCOME MESSAGE
-   ========================================================= */
+WELCOME MESSAGE
+========================================================= */
 
 .content-area .welcome-message {
 
-    position: relative;
+```
+position: relative;
 
-    z-index: 20;
+z-index: 20;
 
-    max-width: 800px;
+max-width: 800px;
 
-    margin: 120px auto 0;
+margin: 120px auto 0;
 
-    padding: 0 30px;
+padding: 0 30px;
 
-    text-align: center;
+text-align: center;
 
-    font-size: 1.1rem;
+font-size: 1.1rem;
 
-    line-height: 1.7;
+line-height: 1.7;
 
-    color: #ffffff;
+color: #ffffff;
+```
 
 }
-
 
 /* Welcome paragraphs */
 
 .content-area .welcome-message p {
 
-    color: #ffffff !important;
+```
+color: #ffffff !important;
+```
 
 }
 
-
 /* =========================================================
-   PROJECT CONTENT
-   ========================================================= */
+PROJECT CONTENT
+========================================================= */
 
 .content-area #content {
 
-    color: #ffffff;
+```
+color: #ffffff;
+```
 
 }
-
 
 .content-area #content h1,
 .content-area #content h2,
@@ -283,194 +283,190 @@ body {
 .content-area #content strong,
 .content-area #content em {
 
-    color: #ffffff !important;
+```
+color: #ffffff !important;
+```
 
 }
 
-
 /* =========================================================
-   PROJECT LINKS
-   ========================================================= */
+PROJECT LINKS
+========================================================= */
 
 .content-area #content a {
 
-    color: #ffffff !important;
+```
+color: #ffffff !important;
 
-    text-decoration-color: rgba(255,255,255,0.7);
+text-decoration-color: rgba(255,255,255,0.7);
+```
 
 }
-
 
 .content-area #content a:hover {
 
-    color: #ffffff !important;
+```
+color: #ffffff !important;
 
-    text-decoration-color: #ffffff;
+text-decoration-color: #ffffff;
+```
 
 }
 
-
 /* =========================================================
-   REMOVE BOOTSTRAP LIGHT BACKGROUNDS
-   ========================================================= */
+REMOVE BOOTSTRAP LIGHT BACKGROUNDS
+========================================================= */
 
 .content-area .bg-light,
 .content-area .bg-white,
 .content-area .text-bg-light {
 
-    background-color: transparent !important;
+```
+background-color: transparent !important;
 
-    color: #ffffff !important;
+color: #ffffff !important;
+```
 
 }
-
 
 /* Bootstrap muted text */
 
 .content-area .text-muted {
 
-    color: #ffffff !important;
+```
+color: #ffffff !important;
+```
 
 }
 
-
 /* =========================================================
-   PROJECT IMAGES
-   ========================================================= */
+PROJECT IMAGES
+========================================================= */
 
 .content-area img {
 
-    max-width: 100%;
+```
+max-width: 100%;
 
-    height: auto;
+height: auto;
+```
 
 }
 
-
 /* =========================================================
-   PAGE CREDIT
-   ========================================================= */
+PAGE CREDIT
+========================================================= */
 
 .content-area .page-credit {
 
-    position: relative;
+```
+position: relative;
 
-    z-index: 20;
+z-index: 20;
 
-    color: #ffffff !important;
+color: #ffffff !important;
 
-    background-color: transparent !important;
+background-color: transparent !important;
 
-    border-top: 1px solid rgba(255,255,255,0.35);
+border-top: 1px solid rgba(255,255,255,0.35);
+```
 
 }
-
 
 .content-area .page-credit strong {
 
-    color: #ffffff !important;
+```
+color: #ffffff !important;
+```
 
 }
 
-
 /* =========================================================
-   MUSIC
-   ========================================================= */
-
+MUSIC
+========================================================= */
 
 /*
- * The audio element itself is hidden because
- * the music is intended as background music.
- */
+
+* The audio element itself is hidden because
+* the music is intended as background music.
+  */
 
 #welcome-music {
 
-    display: none;
+```
+display: none;
+```
 
 }
 
-
 /* =========================================================
-   MOBILE
-   ========================================================= */
+MOBILE
+========================================================= */
 
 @media (max-width: 768px) {
 
-    .standard-img {
+```
+.standard-img {
 
-        width: 60%;
-
-    }
-
-    .content-area {
-
-        min-height: 100vh;
-
-        padding: 1.5rem;
-
-    }
-
-    .content-area .welcome-message {
-
-        margin-top: 80px;
-
-        padding: 0 15px;
-
-        font-size: 1rem;
-
-    }
+    width: 60%;
 
 }
 
+.content-area {
+
+    min-height: 100vh;
+
+    padding: 1.5rem;
+
+}
+
+.content-area .welcome-message {
+
+    margin-top: 80px;
+
+    padding: 0 15px;
+
+    font-size: 1rem;
+
+}
+```
+
+}
 
 /* =========================================================
-   SMALL MOBILE
-   ========================================================= */
+SMALL MOBILE
+========================================================= */
 
 @media (max-width: 480px) {
 
-    .standard-img {
+```
+.standard-img {
 
-        width: 90%;
-
-    }
-
-    .left-column {
-
-        padding: 1.5rem;
-
-    }
-
-    .content-area {
-
-        padding: 1rem;
-
-    }
-
-    .content-area .welcome-message {
-
-        margin-top: 60px;
-
-        padding: 0 10px;
-
-        font-size: 0.95rem;
-
-    }
+    width: 90%;
 
 }
 
+.left-column {
 
-/* =========================================================
-   REDUCE MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .content-area::before,
-    .content-area::after {
-
-        animation: none;
-
-    }
+    padding: 1.5rem;
 
 }
+
+.content-area {
+
+    padding: 1rem;
+
+}
+
+.content-area .welcome-message {
+
+    margin-top: 60px;
+
+    padding: 0 10px;
+
+    font-size: 0.95rem;
+
+}
+
+}
+
