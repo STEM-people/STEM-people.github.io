@@ -16,6 +16,16 @@ min-height: 100%;
 
 body {
 background-color: #000000;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================================
+BOOTSTRAP ROW
+========================================================= */
+
+.container-fluid,
+.row {
+min-height: 100vh;
 }
 
 /* =========================================================
@@ -23,43 +33,137 @@ LEFT COLUMN
 ========================================================= */
 
 .left-column {
+position: relative;
+z-index: 100;
+
+```
 min-height: 100vh;
+
 background-color: #ffffff;
+
 border-right: 1px solid #dee2e6;
+
 padding: 2rem;
+
+color: #000000;
+```
+
 }
 
-/* Profile image */
+/* =========================================================
+PROFILE
+========================================================= */
 
 .profile-img {
 width: 150px;
 height: 150px;
+
+```
 object-fit: cover;
+
 border-radius: 50%;
+```
+
 }
 
-/* Contact information */
+.profile-section h4 {
+color: #000000;
+}
+
+.profile-role {
+color: #666666;
+}
+
+/* =========================================================
+CONTACT
+========================================================= */
 
 .contact-info {
 margin-top: 1.5rem;
+
+```
 font-size: 0.95rem;
+
+color: #000000;
+```
+
 }
 
-/* Project menu */
+.contact-info p {
+color: #000000 !important;
+
+```
+margin-bottom: 1rem;
+```
+
+}
+
+.contact-info strong {
+color: #000000 !important;
+}
+
+.contact-info a {
+color: #007bff !important;
+
+```
+text-decoration: none;
+```
+
+}
+
+.contact-info a:hover {
+text-decoration: underline;
+}
+
+/* =========================================================
+PROJECT MENU
+========================================================= */
 
 .project-menu {
 margin-top: 2rem;
+
+```
+position: relative;
+z-index: 101;
+```
+
 }
 
 .project-menu a {
 display: block;
+
+```
 margin: 0.5rem 0;
+
 text-decoration: none;
+
 color: #007bff;
+```
+
 }
 
 .project-menu a:hover {
 text-decoration: underline;
+}
+
+.project-menu .projects-title {
+color: #000000;
+}
+
+.project-menu .projects-title h5 {
+color: #000000;
+}
+
+/* =========================================================
+SUBMENUS
+========================================================= */
+
+.hidden {
+display: none !important;
+}
+
+.submenu {
+margin-left: 20px;
 }
 
 /* =========================================================
@@ -84,29 +188,27 @@ color: #ffffff;
 
 }
 
-/*
-
-* The content remains above the
-* static space background.
-  */
-
-.content-area > #content {
-position: relative;
-z-index: 10;
-}
-
 /* =========================================================
-STATIC DEEP SPACE BACKGROUND
+STATIC STAR FIELD
 ========================================================= */
 
 /*
+IMPORTANT:
 
-* First star layer.
-*
-* IMPORTANT:
-* This layer is STATIC.
-* There is intentionally NO animation.
-  */
+There is NO animation here.
+
+The stars remain completely static.
+
+The same background is therefore used for:
+
+Welcome
+Planetary Sciences
+Technology
+Astronomy
+Eclipse
+Mars
+Androids
+*/
 
 .content-area::before {
 
@@ -115,25 +217,25 @@ content: "";
 
 position: absolute;
 
-inset: -50%;
-
-width: 200%;
-height: 200%;
+inset: 0;
 
 background-image:
+
     radial-gradient(
         circle,
-        rgba(255,255,255,0.95) 1px,
+        rgba(255,255,255,0.90) 1px,
         transparent 1.5px
     ),
+
     radial-gradient(
         circle,
-        rgba(255,255,255,0.75) 1px,
+        rgba(255,255,255,0.65) 1px,
         transparent 1.5px
     ),
+
     radial-gradient(
         circle,
-        rgba(255,255,255,0.55) 1px,
+        rgba(255,255,255,0.40) 1px,
         transparent 1.5px
     );
 
@@ -157,12 +259,8 @@ z-index: 0;
 }
 
 /*
-
-* Second star layer.
-*
-* This creates the impression of
-* different depths without movement.
-  */
+Second static star layer.
+*/
 
 .content-area::after {
 
@@ -171,20 +269,19 @@ content: "";
 
 position: absolute;
 
-inset: -50%;
-
-width: 200%;
-height: 200%;
+inset: 0;
 
 background-image:
+
     radial-gradient(
         circle,
-        rgba(255,255,255,0.9) 0.7px,
+        rgba(255,255,255,0.80) 0.7px,
         transparent 1px
     ),
+
     radial-gradient(
         circle,
-        rgba(255,255,255,0.5) 0.8px,
+        rgba(255,255,255,0.45) 0.8px,
         transparent 1.2px
     );
 
@@ -196,7 +293,7 @@ background-position:
     40px 20px,
     100px 70px;
 
-opacity: 0.45;
+opacity: 0.35;
 
 pointer-events: none;
 
@@ -206,23 +303,23 @@ z-index: 1;
 }
 
 /* =========================================================
-NO SPACE ANIMATION
+CONTENT LAYER
 ========================================================= */
 
-/*
+.content-area > #content {
 
-* The previous versions contained:
-*
-* deepSpaceDrift
-* deepSpaceDriftFast
-*
-* Those animations have intentionally been removed.
-*
-* The space background is now completely static.
-  */
+```
+position: relative;
+
+z-index: 10;
+
+color: #ffffff;
+```
+
+}
 
 /* =========================================================
-WELCOME MESSAGE
+WELCOME
 ========================================================= */
 
 .content-area .welcome-message {
@@ -249,8 +346,6 @@ color: #ffffff;
 
 }
 
-/* Welcome paragraphs */
-
 .content-area .welcome-message p {
 
 ```
@@ -260,7 +355,7 @@ color: #ffffff !important;
 }
 
 /* =========================================================
-PROJECT CONTENT
+ALL PROJECT CONTENT
 ========================================================= */
 
 .content-area #content {
@@ -281,7 +376,8 @@ color: #ffffff;
 .content-area #content li,
 .content-area #content span,
 .content-area #content strong,
-.content-area #content em {
+.content-area #content em,
+.content-area #content label {
 
 ```
 color: #ffffff !important;
@@ -298,7 +394,8 @@ PROJECT LINKS
 ```
 color: #ffffff !important;
 
-text-decoration-color: rgba(255,255,255,0.7);
+text-decoration-color:
+    rgba(255,255,255,0.7);
 ```
 
 }
@@ -308,39 +405,54 @@ text-decoration-color: rgba(255,255,255,0.7);
 ```
 color: #ffffff !important;
 
-text-decoration-color: #ffffff;
+text-decoration-color:
+    #ffffff;
 ```
 
 }
 
 /* =========================================================
-REMOVE BOOTSTRAP LIGHT BACKGROUNDS
+PROJECT BACKGROUNDS
 ========================================================= */
 
-.content-area .bg-light,
-.content-area .bg-white,
-.content-area .text-bg-light {
+/*
+Any white/light block coming from a
+project page becomes transparent.
+
+This keeps every project consistent
+with the space background.
+*/
+
+.content-area #content .bg-light,
+.content-area #content .bg-white,
+.content-area #content .text-bg-light {
 
 ```
-background-color: transparent !important;
+background-color:
+    transparent !important;
 
-color: #ffffff !important;
-```
-
-}
-
-/* Bootstrap muted text */
-
-.content-area .text-muted {
-
-```
 color: #ffffff !important;
 ```
 
 }
 
 /* =========================================================
-PROJECT IMAGES
+GENERIC PROJECT ELEMENTS
+========================================================= */
+
+.content-area #content section,
+.content-area #content article,
+.content-area #content .project-item,
+.content-area #content .project-list {
+
+```
+color: #ffffff;
+```
+
+}
+
+/* =========================================================
+IMAGES
 ========================================================= */
 
 .content-area img {
@@ -364,11 +476,25 @@ position: relative;
 
 z-index: 20;
 
+margin: 2rem auto 0;
+
+padding: 0.8rem 1rem;
+
+max-width: 850px;
+
+border-top:
+    1px solid rgba(255,255,255,0.35);
+
+font-size: 0.82rem;
+
+line-height: 1.5;
+
+text-align: center;
+
 color: #ffffff !important;
 
-background-color: transparent !important;
-
-border-top: 1px solid rgba(255,255,255,0.35);
+background-color:
+    transparent !important;
 ```
 
 }
@@ -382,14 +508,28 @@ color: #ffffff !important;
 }
 
 /* =========================================================
-MUSIC
+LOADING
 ========================================================= */
 
-/*
+.loading-message {
 
-* The audio element itself is hidden because
-* the music is intended as background music.
-  */
+```
+position: relative;
+
+z-index: 20;
+
+color: #ffffff;
+
+text-align: center;
+
+margin-top: 100px;
+```
+
+}
+
+/* =========================================================
+MUSIC
+========================================================= */
 
 #welcome-music {
 
@@ -406,19 +546,21 @@ MOBILE
 @media (max-width: 768px) {
 
 ```
-.standard-img {
+.left-column {
 
-    width: 60%;
+    min-height: auto;
 
+    padding: 1.5rem;
 }
+
 
 .content-area {
 
     min-height: 100vh;
 
     padding: 1.5rem;
-
 }
+
 
 .content-area .welcome-message {
 
@@ -427,7 +569,6 @@ MOBILE
     padding: 0 15px;
 
     font-size: 1rem;
-
 }
 ```
 
@@ -440,23 +581,17 @@ SMALL MOBILE
 @media (max-width: 480px) {
 
 ```
-.standard-img {
-
-    width: 90%;
-
-}
-
 .left-column {
 
     padding: 1.5rem;
-
 }
+
 
 .content-area {
 
     padding: 1rem;
-
 }
+
 
 .content-area .welcome-message {
 
@@ -465,8 +600,8 @@ SMALL MOBILE
     padding: 0 10px;
 
     font-size: 0.95rem;
-
 }
 
 }
+
 
