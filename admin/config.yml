@@ -1,0 +1,210 @@
+# =====================================================================
+# Content editor configuration.
+#
+# This file describes the forms shown at /admin/. Each collection below
+# maps to a folder of Markdown files inside content/.
+# =====================================================================
+
+backend:
+  name: github
+  repo: STEM-people/STEM-people.github.io
+  branch: main
+
+# Images and videos uploaded from the editor land here.
+media_folder: content/media
+public_folder: /content/media
+
+# Changes are committed straight to the branch, so they go live at once.
+publish_mode: simple
+
+site_url: https://stem-people.github.io/
+logo_url: https://stem-people.github.io/img/STEMmery.jpg
+
+collections:
+  # -------------------------------------------------------------------
+  # Articles: one Markdown file per entry.
+  # -------------------------------------------------------------------
+  - name: projects
+    label: Articles
+    label_singular: Article
+    description: >
+      Everything that appears as a card on the website. Choose the area it
+      belongs to and write the text below.
+    folder: content/projects
+    create: true
+    slug: '{{slug}}'
+    extension: md
+    format: yaml-frontmatter
+    sortable_fields: [date, title]
+    preview_path: 'index.html#/{{section}}/{{slug}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+
+      - name: section
+        label: Area
+        widget: relation
+        collection: sections
+        search_fields: [title]
+        # Must match the `slug` field of the area, which is what the site
+        # uses to build its links.
+        value_field: slug
+        display_fields: [title]
+        hint: Which research area this article belongs to.
+
+      - name: date
+        label: Date
+        widget: datetime
+        required: false
+        date_format: 'YYYY-MM-DD'
+        time_format: false
+        format: 'YYYY-MM-DD'
+        picker_utc: true
+        hint: Leave empty if the entry has no particular date.
+
+      - name: summary
+        label: Short summary
+        widget: text
+        required: false
+        hint: One or two sentences. Shown on the card and in search results.
+
+      - name: cover
+        label: Cover image
+        widget: image
+        required: false
+        hint: If left empty, the first image in the text is used.
+
+      - name: tags
+        label: Tags
+        widget: list
+        required: false
+        default: []
+
+      - name: order
+        label: Position
+        widget: number
+        required: false
+        default: 10
+        value_type: int
+        hint: Lower numbers appear first within the area.
+
+      - name: draft
+        label: Keep as draft
+        widget: boolean
+        required: false
+        default: false
+        hint: A draft is saved but stays hidden on the website.
+
+      - name: body
+        label: Text
+        widget: markdown
+        hint: >
+          Use headings, bold, lists and images. An image caption is written
+          as the image "title" field.
+
+  # -------------------------------------------------------------------
+  # Areas: the top-level navigation entries.
+  # -------------------------------------------------------------------
+  - name: sections
+    label: Research areas
+    label_singular: Research area
+    description: >
+      The main navigation entries. Creating one adds a new area to the menu
+      and to the home page.
+    folder: content/sections
+    create: true
+    slug: '{{slug}}'
+    extension: md
+    format: yaml-frontmatter
+    fields:
+      - { name: title, label: Name, widget: string }
+
+      - name: slug
+        label: Web address
+        widget: string
+        hint: >
+          Lowercase, no spaces or accents, e.g. "planetary-sciences". Changing
+          it changes the link to this area.
+
+      - name: icon
+        label: Icon
+        widget: string
+        required: false
+        default: '✦'
+        hint: A single character, e.g. ✦ ◍ ⬡ ☄ ⚛
+
+      - name: accent
+        label: Accent colour
+        widget: string
+        required: false
+        default: '#7cc4ff'
+        hint: Hex colour used for this area, e.g. #7cc4ff
+
+      - name: order
+        label: Menu position
+        widget: number
+        required: false
+        default: 10
+        value_type: int
+
+      - { name: summary, label: Short description, widget: text, required: false }
+
+      - name: draft
+        label: Keep as draft
+        widget: boolean
+        required: false
+        default: false
+
+      - { name: body, label: Introduction text, widget: markdown, required: false }
+
+  # -------------------------------------------------------------------
+  # Site-wide settings.
+  # -------------------------------------------------------------------
+  - name: settings
+    label: Site settings
+    files:
+      - name: site
+        label: Profile and home page
+        file: content/site.json
+        format: json
+        fields:
+          - { name: name, label: Name, widget: string }
+          - { name: role, label: Role, widget: string }
+          - { name: photo, label: Photo, widget: image }
+          - { name: email, label: Email, widget: string }
+          - { name: orcid, label: ORCID, widget: string, required: false }
+          - { name: heroKicker, label: Home — small line above the title, widget: string }
+          - { name: heroTitle, label: Home — main title, widget: string }
+          - { name: heroLead, label: Home — introduction, widget: text }
+          - { name: about, label: Collaboration text, widget: text }
+
+          - name: stats
+            label: Home — highlights
+            widget: list
+            required: false
+            fields:
+              - { name: value, label: Big text, widget: string }
+              - { name: label, label: Description, widget: string }
+
+          - { name: credit, label: Attribution notice, widget: text }
+
+          - name: ambientAudio
+            label: Ambient music file
+            widget: string
+            required: false
+            hint: Leave empty to remove the ambient sound button entirely.
+
+          - name: analyticsId
+            label: Google Analytics ID
+            widget: string
+            required: false
+            pattern: ['^$|^G-[A-Z0-9]+$', 'Must look like G-XXXXXXXXXX, or be empty']
+            hint: >
+              Paste the measurement ID from Google Analytics (starts with G-).
+              Leave empty to switch analytics and the cookie notice off.
+
+      - name: privacy
+        label: Privacy page
+        file: content/privacy.md
+        fields:
+          - { name: title, label: Title, widget: string }
+          - { name: body, label: Text, widget: markdown }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+
+  <title>Content editor — STEM People</title>
+
+  <link rel="icon" href="../img/STEMmery.jpg">
+  <link href="config.yml" type="text/yaml" rel="cms-config-url">
+
+  <style>
+    body { margin: 0; background: #05060f; }
+
+    .fallback {
+      max-width: 34rem;
+      margin: 18vh auto;
+      padding: 0 1.5rem;
+      color: #c9d2f0;
+      font: 400 16px/1.7 system-ui, sans-serif;
+      text-align: center;
+    }
+
+    .fallback a { color: #7cc4ff; }
+  </style>
+</head>
+
+<body>
+
+  <noscript>
+    <p class="fallback">The content editor needs JavaScript enabled.</p>
+  </noscript>
+
+  <!--
+    Sveltia CMS: a drop-in editor that commits directly to the GitHub
+    repository. It is configured by config.yml next to this file.
+
+    Sign in with the GitHub account that has write access to the repository.
+  -->
+  <script src="https://unpkg.com/@sveltia/cms@0.218.1/dist/sveltia-cms.js" type="module"></script>
+
+</body>
+
+</html>

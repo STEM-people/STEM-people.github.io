@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redirecting — STEM People</title>
+  <meta name="robots" content="noindex">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #05060f;
+      color: rgba(233, 238, 255, 0.7);
+      font: 400 16px/1.7 system-ui, -apple-system, 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    a { color: #7cc4ff; }
+  </style>
+
+  <script>
+    /*
+     * GitHub Pages serves this file for any address it does not recognise.
+     *
+     * The site uses hash routing, so an old bookmark such as
+     * /astronomy/eclipse-2026/ is translated into /#/astronomy/eclipse-2026
+     * instead of showing a dead end.
+     */
+    (function () {
+      var path = window.location.pathname
+        .replace(/^\/+|\/+$/g, '')
+        .replace(/(^|\/)index\.html$/, '');
+
+      var target = '/' + (path ? '#/' + path : '');
+
+      window.location.replace(target + window.location.search);
+    })();
+  </script>
+</head>
+
+<body>
+  <p>
+    Taking you back to <a href="/">stem-people.github.io</a>…
+  </p>
+</body>
+
+</html>

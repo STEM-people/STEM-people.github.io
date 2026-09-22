@@ -1,0 +1,28 @@
+{
+  "name": "Mery",
+  "role": "STEM Researcher",
+  "photo": "/img/mery-avatar.jpg",
+  "email": "mariaruizcontact@gmail.com",
+  "orcid": "0009-0009-0930-7790",
+  "heroKicker": "Planetary science · Astronomy · Technology",
+  "heroTitle": "Exploring science, from Gale Crater to your backyard sky",
+  "heroLead": "I am a STEM researcher working across planetary sciences, astronomy and technology. Alongside my institutional work I take on freelance projects, which lets me collaborate with people all over the world.",
+  "about": "If you would like to collaborate on a scientific paper, develop a STEM project, or simply talk about science, get in touch. Every observation here was made, photographed and written up first-hand.",
+  "stats": [
+    {
+      "value": "MSL",
+      "label": "Mars Science Laboratory team member"
+    },
+    {
+      "value": "2026",
+      "label": "Total solar eclipse campaign"
+    },
+    {
+      "value": "3",
+      "label": "Research areas"
+    }
+  ],
+  "credit": "The content of STEM-people is regularly maintained and updated. When content, images, data or materials from this website are used, STEM-people should be acknowledged as the source, and the corresponding webpage address should be included.",
+  "ambientAudio": "/audio/space-ambient-cinematic-music.mp3",
+  "analyticsId": ""
+}
