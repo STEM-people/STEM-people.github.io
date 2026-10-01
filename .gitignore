@@ -1,0 +1,8 @@
+# Sent privately to whoever writes the content; not published with the site.
+/GUIA-CONTENIDO.md
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+.vscode/
+node_modules/

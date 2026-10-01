@@ -1,0 +1,87 @@
+{
+  "generated": "2026-09-22T17:46:27.518Z",
+  "sections": [
+    {
+      "slug": "planetary-sciences",
+      "file": "content/sections/planetary-sciences.md",
+      "title": "Planetary Sciences",
+      "icon": "◍",
+      "accent": "#ff8a5b",
+      "order": 1,
+      "summary": "Research on the surfaces, atmospheres and mineralogy of other worlds, using data returned by active space missions.",
+      "draft": false
+    },
+    {
+      "slug": "astronomy",
+      "file": "content/sections/astronomy.md",
+      "title": "Astronomy",
+      "icon": "✦",
+      "accent": "#7cc4ff",
+      "order": 2,
+      "summary": "Observing the night sky, documenting astronomical events and showing that serious optics can be done with kitchen utensils.",
+      "draft": false
+    },
+    {
+      "slug": "technology",
+      "file": "content/sections/technology.md",
+      "title": "Technology",
+      "icon": "⬡",
+      "accent": "#a78bfa",
+      "order": 3,
+      "summary": "Repairing electronic devices, giving hardware a second life, and building artistic work at the edge of technology and craft.",
+      "draft": false
+    }
+  ],
+  "projects": [
+    {
+      "slug": "eclipse-2026",
+      "file": "content/projects/eclipse-2026.md",
+      "section": "astronomy",
+      "title": "12 August 2026 — Total Solar Eclipse",
+      "date": "2026-08-12",
+      "summary": "A full observing campaign from Herrera de Pisuerga — homemade pinhole projection, a remote robotic telescope, and the geometry that makes totality possible.",
+      "cover": "/astronomy/eclipse-2026/media/EclipseConVenus-2.jpg",
+      "tags": [
+        "eclipse",
+        "optics",
+        "pinhole",
+        "Sun"
+      ],
+      "order": 1,
+      "draft": false
+    },
+    {
+      "slug": "mars-gale-crater",
+      "file": "content/projects/mars-gale-crater.md",
+      "section": "planetary-sciences",
+      "title": "Mars Works — The Gale Crater",
+      "date": "2025-01-24",
+      "summary": "Reconstructing the environment of Gale Crater from Mars Science Laboratory and Mars Express data.",
+      "cover": "/planetary_sciences/mars/CuriosityVideoSeguridad.png",
+      "tags": [
+        "Mars",
+        "Curiosity",
+        "MATLAB",
+        "OMEGA"
+      ],
+      "order": 1,
+      "draft": false
+    },
+    {
+      "slug": "device-repair",
+      "file": "content/projects/device-repair.md",
+      "section": "technology",
+      "title": "Repair Works",
+      "date": "",
+      "summary": "Examples of the repair services I offer, and technology creations built from recovered hardware.",
+      "cover": "/technology/media/movil_1.jpg",
+      "tags": [
+        "repair",
+        "electronics",
+        "reuse"
+      ],
+      "order": 1,
+      "draft": false
+    }
+  ]
+}
